@@ -1,0 +1,248 @@
+# data_set number to country name:
+# 01 -> China
+# 02 -> Thailand
+# 03 -> South Korea
+# 04 -> Japan
+# 05 -> Australia
+# 06 -> America
+
+####### 01 START #######
+- title: "Changbai Mountain Heaven Lake"
+  data_set: "01"
+  location:
+    latitude: 42.068512
+    longitude: 128.073444
+
+- title: "Shenyang"
+  data_set: "01"
+  location:
+    latitude: 41.565330
+    longitude: 123.544836
+
+- title: "Shenyang"
+  data_set: "01"
+  location:
+    latitude: 41.802626
+    longitude: 123.425493
+
+- title: "Qinhuangdao"
+  data_set: "01"
+  location:
+    latitude: 39.937033
+    longitude: 119.599222
+
+- title: "Beijing"
+  data_set: "01"
+  location:
+    latitude: 39.913969
+    longitude: 116.404220
+
+- title: "Shijiazhuang"
+  data_set: "01"
+  location:
+    latitude: 38.047192
+    longitude: 114.515313
+
+- title: "Handan"
+  data_set: "01"
+  location:
+    latitude: 36.710513
+    longitude: 114.537874
+
+- title: "Jinan"
+  data_set: "01"
+  location:
+    latitude: 36.655841
+    longitude: 117.119820
+
+- title: "Qingdao"
+  data_set: "01"
+  location:
+    latitude: 36.073257
+    longitude: 120.381086
+
+- title: "Zhengzhou"
+  data_set: "01"
+  location:
+    latitude: 34.757844
+    longitude: 113.627501
+
+- title: "Zhengzhou"
+  data_set: "01"
+  location:
+    latitude: 34.757844
+    longitude: 113.627501
+
+- title: "Xuzhou"
+  data_set: "01"
+  location:
+    latitude: 34.209034
+    longitude: 117.283797
+
+- title: "Taishan Mountain"
+  data_set: "01"
+  location:
+    latitude: 36.256940
+    longitude: 117.105599
+
+- title: "Xi'an"
+  data_set: "01"
+  location:
+    latitude: 34.345069
+    longitude: 108.941368
+
+- title: "Yancheng"
+  data_set: "01"
+  location:
+    latitude: 33.348848
+    longitude: 120.161891
+
+- title: "Yangzhou"
+  data_set: "01"
+  location:
+    latitude: 32.396494
+    longitude: 119.412484
+
+- title: "Zhenjiang"
+  data_set: "01"
+  location:
+    latitude: 32.186158
+    longitude: 119.427101
+
+- title: "Nanjing"
+  data_set: "01"
+  location:
+    latitude: 32.057776
+    longitude: 118.798049
+
+- title: "Hefei"
+  data_set: "01"
+  location:
+    latitude: 31.819845
+    longitude: 117.225798
+
+- title: "Anqing"
+  data_set: "01"
+  location:
+    latitude: 30.532490
+    longitude: 117.114268
+
+- title: "Huangshan Mountain"
+  data_set: "01"
+  location:
+    latitude: 30.138426
+    longitude: 118.165284
+
+- title: "Suzhou"
+  data_set: "01"
+  location:
+    latitude: 31.300093
+    longitude: 120.583845
+
+- title: "Shanghai"
+  data_set: "01"
+  location:
+    latitude: 31.240749
+    longitude: 121.465844
+
+- title: "Hangzhou"
+  data_set: "01"
+  location:
+    latitude: 30.277439
+    longitude: 120.152696
+
+- title: "Xiamen"
+  data_set: "01"
+  location:
+    latitude: 24.481048
+    longitude: 118.087920
+
+- title: "Shenzhen"
+  data_set: "01"
+  location:
+    latitude: 22.547062
+    longitude: 114.053858
+
+- title: "Hong Kong"
+  data_set: "01"
+  location:
+    latitude: 22.319139
+    longitude: 114.171587
+
+- title: "Taipei"
+  data_set: "01"
+  location:
+    latitude: 25.040225
+    longitude: 121.565522
+
+- title: "Taipei"
+  data_set: "01"
+  location:
+    latitude: 25.040225
+    longitude: 121.565522
+
+- title: "Yilan"
+  data_set: "01"
+  location:
+    latitude: 24.702876
+    longitude: 121.737709
+
+- title: "Hualien"
+  data_set: "01"
+  location:
+    latitude: 23.992633
+    longitude: 121.602906
+
+- title: "Taitung"
+  data_set: "01"
+  location:
+    latitude: 22.800179
+    longitude: 121.072390
+
+- title: "Green Island"
+  data_set: "01"
+  location:
+    latitude: 22.661872
+    longitude: 121.490215
+
+- title: "Kenting"
+  data_set: "01"
+  location:
+    latitude: 21.953611
+    longitude: 120.779625
+
+- title: "Kaohsiung"
+  data_set: "01"
+  location:
+    latitude: 22.630779
+    longitude: 120.299724
+
+- title: "Tainan"
+  data_set: "01"
+  location:
+    latitude: 23.001273
+    longitude: 120.227821
+
+- title: "Sun Moon Lake"
+  data_set: "01"
+  location:
+    latitude: 23.858424
+    longitude: 120.916136
+
+- title: "Taichung"
+  data_set: "01"
+  location:
+    latitude: 24.146399
+    longitude: 120.679799
+####### 01 END #######
+
+
+
+
+
+
+
+
+
+
+

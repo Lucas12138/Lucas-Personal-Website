@@ -267,6 +267,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-titles-from-headings
+  - jekyll-maps
 
 # Theme
 # ---------------------------------------------------------------------------------------
@@ -337,3 +338,8 @@ compress_html:
 
 sass:
   style:               compressed
+
+# map api restricted already
+maps:
+  google:
+    api_key: AIzaSyCyN6C7EMhC6NCu-vY-Dz3F0AgejKf0qxI
