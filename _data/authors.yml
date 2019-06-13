@@ -16,6 +16,11 @@ author1:
 
     Addicted to the world! 🇨🇳 -> 🇹🇭 -> 🇰🇷 -> 🇯🇵 -> 🇦🇺 -> 🇺🇸
 
+    Footprints:
+
+    {% google_map
+       src="_data/my_places.yml" no_cluster %}
+
   # This photo will be used in the about section
   picture:
     path:            https://media.licdn.com/dms/image/C5603AQHfqlTZH-i15Q/profile-displayphoto-shrink_200_200/0?e=1560988800&v=beta&t=M7XXdVNhHWQC4NvCNtjLGePdyzGfxtqwmJfn4cP8y0I
