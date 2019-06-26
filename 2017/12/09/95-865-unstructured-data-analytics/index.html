@@ -36,7 +36,7 @@ Powered by Hydejack v8.4.0 <https://hydejack.com/>
 
 
   
-<!-- Begin Jekyll SEO tag v2.5.0 -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>95-865 Unstructured Data Analytics | LUCAS LIU</title>
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="95-865 Unstructured Data Analytics" />
@@ -50,7 +50,7 @@ Powered by Hydejack v8.4.0 <https://hydejack.com/>
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-12-09T10:45:35-05:00" />
 <script type="application/ld+json">
-{"description":"Contents 1 Introduction 2 Exploratory Data Analysis 2.1 Basic Text Analysis 2.2 Feature Vector, Co-Occurrence Analysis, Correlation, Causation 2.3 Visualizing High-Dimensional Vectors 2.4 Clustering with Generative Models 2.4.1 K-Means 2.4.2 Gaussian Mixture Model (GMM) 2.4.3 Dirichlet Process Gaussian Mixture Model (DP-GMM) 2.4.4 CH Index and Gap Statistic 2.5 Hierarchical Clustering 2.5.1 Divisive Clustering 2.5.2 Agglomerative Clustering 2.6 Before You Choose a Clustering Method 2.7 Topic Modeling 3 Predictive Data Analysis 3.1 Classification 3.1.1 kNN 3.1.2 SVM 3.1.3 SVM Kernels 3.1.4 Naive Bayes 3.1.5 Method Evaluation 3.2 Regression 3.2.1 Decision Trees for Classification 3.2.2 Decision Trees for Regression 3.2.3 Random Forest and Extremely Randomized Trees 3.2.4 Boosting 3.3 Deep Learning 3.3.1 Handwritten Digit Demo 3.3.2 Convolutional Neural Network (CNN) 3.3.3 Recurrent Neural Network (RNN) 3.3.4 Gradient Descent 3.3.5 Dealing with Small Datasets","@type":"BlogPosting","headline":"95-865 Unstructured Data Analytics","dateModified":"2017-12-09T10:45:35-05:00","datePublished":"2017-12-09T10:45:35-05:00","url":"https:///Lucas12138.github.io/2017/12/09/95-865-unstructured-data-analytics/","mainEntityOfPage":{"@type":"WebPage","@id":"https:///Lucas12138.github.io/2017/12/09/95-865-unstructured-data-analytics/"},"author":{"@type":"Person","name":"Lucas"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https:///Lucas12138.github.io/assets/icons/nefertiti.png"},"name":"Lucas"},"@context":"http://schema.org"}</script>
+{"description":"Contents 1 Introduction 2 Exploratory Data Analysis 2.1 Basic Text Analysis 2.2 Feature Vector, Co-Occurrence Analysis, Correlation, Causation 2.3 Visualizing High-Dimensional Vectors 2.4 Clustering with Generative Models 2.4.1 K-Means 2.4.2 Gaussian Mixture Model (GMM) 2.4.3 Dirichlet Process Gaussian Mixture Model (DP-GMM) 2.4.4 CH Index and Gap Statistic 2.5 Hierarchical Clustering 2.5.1 Divisive Clustering 2.5.2 Agglomerative Clustering 2.6 Before You Choose a Clustering Method 2.7 Topic Modeling 3 Predictive Data Analysis 3.1 Classification 3.1.1 kNN 3.1.2 SVM 3.1.3 SVM Kernels 3.1.4 Naive Bayes 3.1.5 Method Evaluation 3.2 Regression 3.2.1 Decision Trees for Classification 3.2.2 Decision Trees for Regression 3.2.3 Random Forest and Extremely Randomized Trees 3.2.4 Boosting 3.3 Deep Learning 3.3.1 Handwritten Digit Demo 3.3.2 Convolutional Neural Network (CNN) 3.3.3 Recurrent Neural Network (RNN) 3.3.4 Gradient Descent 3.3.5 Dealing with Small Datasets","headline":"95-865 Unstructured Data Analytics","dateModified":"2017-12-09T10:45:35-05:00","datePublished":"2017-12-09T10:45:35-05:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:///Lucas12138.github.io/2017/12/09/95-865-unstructured-data-analytics/"},"url":"https:///Lucas12138.github.io/2017/12/09/95-865-unstructured-data-analytics/","author":{"@type":"Person","name":"Lucas"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https:///Lucas12138.github.io/assets/icons/nefertiti.png"},"name":"Lucas"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -413,47 +413,23 @@ in <a href="/hydejack/" class="flip-title">Welcome to my world! 🚀</a> / <span
 
 <p>Assume we are looking at a picture of zebra and grass and there’re only black, white and green pixels. Then we start counting: for each pixel, look at 4 neighboring pixels, compare the values and add the values to a table.</p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone wp-image-101" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.16.07-PM-300x75.png" alt="" width="348" height="87" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.16.07-PM-300x75.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.16.07-PM-768x192.png 768w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.16.07-PM.png 785w" sizes="(max-width: 348px) 100vw, 348px" >
-    <noscript><img data-ignore  class="alignnone wp-image-101" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.16.07-PM-300x75.png" alt="" width="348" height="87" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.16.07-PM-300x75.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.16.07-PM-768x192.png 768w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.16.07-PM.png 785w" sizes="(max-width: 348px) 100vw, 348px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone wp-image-101" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.16.07-PM-300x75.png" alt="" width="348" height="87" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.16.07-PM-300x75.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.16.07-PM-768x192.png 768w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.16.07-PM.png 785w" sizes="(max-width: 348px) 100vw, 348px" /></p>
 
 <p>Now, think of the bag of words model. We take [green, green], [green, white], [green, black]… into the bag. There will be 5750 cards in the bag. And we can calculate the probabilities of P(green, white), P(white, black), P(white) etc.</p>
 
 <p>Then we can use <strong>pointwise mutual information (PMI)</strong> to measure surprise. The higher PMI means more surprising. The formula for PMI is as follows.</p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-102" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.29.21-PM-300x118.png" alt="" width="300" height="118" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.29.21-PM-300x118.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.29.21-PM.png 353w" sizes="(max-width: 300px) 100vw, 300px" >
-    <noscript><img data-ignore  class="alignnone size-medium wp-image-102" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.29.21-PM-300x118.png" alt="" width="300" height="118" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.29.21-PM-300x118.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.29.21-PM.png 353w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone size-medium wp-image-102" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.29.21-PM-300x118.png" alt="" width="300" height="118" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.29.21-PM-300x118.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.29.21-PM.png 353w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 
 <p>P(A, B) represents A and B co-occurring. P(A) is A occurring. P(B) is B occurring. If A and B are independent, P(A, B) = P(A) P(B) and PMI = 0.</p>
 
 <p>In practice, it’s helpful to generalize PMI. We can add a positive tune parameter to it.</p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-106" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.19.13-PM-300x92.png" alt="" width="300" height="92" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.19.13-PM-300x92.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.19.13-PM.png 375w" sizes="(max-width: 300px) 100vw, 300px" >
-    <noscript><img data-ignore  class="alignnone size-medium wp-image-106" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.19.13-PM-300x92.png" alt="" width="300" height="92" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.19.13-PM-300x92.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.19.13-PM.png 375w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone size-medium wp-image-106" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.19.13-PM-300x92.png" alt="" width="300" height="92" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.19.13-PM-300x92.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.19.13-PM.png 375w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 
 <p>PMI is used to measure one pair of entities. To measure all pairs we can use <strong>Phi-square</strong> and <strong>Chi-square</strong>. Its formula is as follows.</p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-105" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.07.56-PM-300x83.png" alt="" width="300" height="83" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.07.56-PM-300x83.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.07.56-PM.png 458w" sizes="(max-width: 300px) 100vw, 300px" >
-    <noscript><img data-ignore  class="alignnone size-medium wp-image-105" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.07.56-PM-300x83.png" alt="" width="300" height="83" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.07.56-PM-300x83.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.07.56-PM.png 458w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone size-medium wp-image-105" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.07.56-PM-300x83.png" alt="" width="300" height="83" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.07.56-PM-300x83.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.07.56-PM.png 458w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 
 <p>Chi-square = N * Phi-square, where N is the total number of occurrences like 5750 cards before.</p>
 
@@ -497,25 +473,13 @@ in <a href="/hydejack/" class="flip-title">Welcome to my world! 🚀</a> / <span
   <li>Cosine similarity:</li>
 </ul>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-109" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.06.22-AM-300x79.png" alt="" width="300" height="79" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.06.22-AM-300x79.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.06.22-AM.png 481w" sizes="(max-width: 300px) 100vw, 300px" >
-    <noscript><img data-ignore  class="alignnone size-medium wp-image-109" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.06.22-AM-300x79.png" alt="" width="300" height="79" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.06.22-AM-300x79.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.06.22-AM.png 481w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone size-medium wp-image-109" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.06.22-AM-300x79.png" alt="" width="300" height="79" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.06.22-AM-300x79.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.06.22-AM.png 481w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 
 <ul>
   <li>Euclidean distance:</li>
 </ul>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-110" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.12.35-AM-300x69.png" alt="" width="300" height="69" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.12.35-AM-300x69.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.12.35-AM.png 512w" sizes="(max-width: 300px) 100vw, 300px" >
-    <noscript><img data-ignore  class="alignnone size-medium wp-image-110" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.12.35-AM-300x69.png" alt="" width="300" height="69" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.12.35-AM-300x69.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.12.35-AM.png 512w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone size-medium wp-image-110" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.12.35-AM-300x69.png" alt="" width="300" height="69" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.12.35-AM-300x69.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.12.35-AM.png 512w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 
 <p>For comparing similarities of <strong>time series</strong>, we need to align them first. Think of shifting one along x-axis to align with another. Then the distance can be the area between the two.</p>
 
@@ -565,35 +529,17 @@ in <a href="/hydejack/" class="flip-title">Welcome to my world! 🚀</a> / <span
 
 <p>Let W = RSS,</p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-117" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.19.27-PM-300x80.png" alt="" width="300" height="80" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.19.27-PM-300x80.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.19.27-PM.png 433w" sizes="(max-width: 300px) 100vw, 300px" >
-    <noscript><img data-ignore  class="alignnone size-medium wp-image-117" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.19.27-PM-300x80.png" alt="" width="300" height="80" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.19.27-PM-300x80.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.19.27-PM.png 433w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone size-medium wp-image-117" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.19.27-PM-300x80.png" alt="" width="300" height="80" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.19.27-PM-300x80.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.19.27-PM.png 433w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 
 <p>n = total number of points</p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone size-full wp-image-116" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.20.07-PM.png" alt="" width="195" height="59" >
-    <noscript><img data-ignore  class="alignnone size-full wp-image-116" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.20.07-PM.png" alt="" width="195" height="59" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone size-full wp-image-116" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.20.07-PM.png" alt="" width="195" height="59" /></p>
 
 <p>This approach is called <strong>CH index</strong>,<strong> </strong>where CH stands for <span style="font-size: 1rem;">Calinski and Harabasz.</span></p>
 
 <p>Another good approach is <strong>gap statistic</strong>.</p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-118" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.30.31-PM-300x59.png" alt="" width="300" height="59" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.30.31-PM-300x59.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.30.31-PM.png 338w" sizes="(max-width: 300px) 100vw, 300px" >
-    <noscript><img data-ignore  class="alignnone size-medium wp-image-118" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.30.31-PM-300x59.png" alt="" width="300" height="59" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.30.31-PM-300x59.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.30.31-PM.png 338w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone size-medium wp-image-118" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.30.31-PM-300x59.png" alt="" width="300" height="59" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.30.31-PM-300x59.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.30.31-PM.png 338w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 
 <p>It uses <strong>Mean Squared Error (MSE)</strong> and <strong>Maximum Likelihood Estimation (MLE)</strong>. Here’s a paper about <a href="https://web.stanford.edu/~hastie/Papers/gap.pdf">gap statistic</a>.</p>
 
@@ -613,13 +559,7 @@ in <a href="/hydejack/" class="flip-title">Welcome to my world! 🚀</a> / <span
 
 <p>Finally, these two can be visualized with a <strong>dendrogram</strong>. Like this.</p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-121" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.52.19-PM-300x178.png" alt="" width="300" height="178" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.52.19-PM-300x178.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.52.19-PM.png 676w" sizes="(max-width: 300px) 100vw, 300px" >
-    <noscript><img data-ignore  class="alignnone size-medium wp-image-121" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.52.19-PM-300x178.png" alt="" width="300" height="178" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.52.19-PM-300x178.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.52.19-PM.png 676w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone size-medium wp-image-121" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.52.19-PM-300x178.png" alt="" width="300" height="178" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.52.19-PM-300x178.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.52.19-PM.png 676w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 
 <h2 id="before-you-choose-a-clustering-method"><span id="Before_You_Choose_a_Clustering_Method">Before You Choose a Clustering Method</span></h2>
 
@@ -646,13 +586,7 @@ in <a href="/hydejack/" class="flip-title">Welcome to my world! 🚀</a> / <span
 
 <p>There’re also some methods to measure the result. For a specific topic, look at <em>m</em> most probable words(“top words”):</p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-124" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-8.02.27-PM-300x116.png" alt="" width="300" height="116" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-8.02.27-PM-300x116.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-8.02.27-PM-768x297.png 768w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-8.02.27-PM.png 849w" sizes="(max-width: 300px) 100vw, 300px" >
-    <noscript><img data-ignore  class="alignnone size-medium wp-image-124" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-8.02.27-PM-300x116.png" alt="" width="300" height="116" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-8.02.27-PM-300x116.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-8.02.27-PM-768x297.png 768w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-8.02.27-PM.png 849w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone size-medium wp-image-124" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-8.02.27-PM-300x116.png" alt="" width="300" height="116" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-8.02.27-PM-300x116.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-8.02.27-PM-768x297.png 768w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-8.02.27-PM.png 849w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 
 <p>Beyond LDA and HDP, there’re also many other topic modeling methods. For example, correlated topic models, Pachinko allocation, biterm topic models, anchor word topic models, dynamic topic models…</p>
 
@@ -697,25 +631,13 @@ in <a href="/hydejack/" class="flip-title">Welcome to my world! 🚀</a> / <span
 
 <p>Using kernels!</p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-126" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-12.55.48-AM-300x141.png" alt="" width="300" height="141" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-12.55.48-AM-300x141.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-12.55.48-AM.png 311w" sizes="(max-width: 300px) 100vw, 300px" >
-    <noscript><img data-ignore  class="alignnone size-medium wp-image-126" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-12.55.48-AM-300x141.png" alt="" width="300" height="141" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-12.55.48-AM-300x141.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-12.55.48-AM.png 311w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone size-medium wp-image-126" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-12.55.48-AM-300x141.png" alt="" width="300" height="141" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-12.55.48-AM-300x141.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-12.55.48-AM.png 311w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 
 <p>The rough idea is basically taking data into higher dimension by kernel methods. Then the data may be linearly separable in higher dimension.</p>
 
 <p>Some example kernels are as follows:</p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-127" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-1.00.21-AM-300x90.png" alt="" width="300" height="90" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-1.00.21-AM-300x90.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-1.00.21-AM.png 574w" sizes="(max-width: 300px) 100vw, 300px" >
-    <noscript><img data-ignore  class="alignnone size-medium wp-image-127" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-1.00.21-AM-300x90.png" alt="" width="300" height="90" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-1.00.21-AM-300x90.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-1.00.21-AM.png 574w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone size-medium wp-image-127" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-1.00.21-AM-300x90.png" alt="" width="300" height="90" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-1.00.21-AM-300x90.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-1.00.21-AM.png 574w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 
 <h3 id="naive-bayes"><span id="Naive_Bayes">Naive Bayes</span></h3>
 
@@ -763,31 +685,13 @@ in <a href="/hydejack/" class="flip-title">Welcome to my world! 🚀</a> / <span
 
 <p><strong>Confusion Matrix:</strong></p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-133" style="font-size: 1rem;" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.26-AM-300x141.png" alt="" width="300" height="141" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.26-AM-300x141.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.26-AM.png 573w" sizes="(max-width: 300px) 100vw, 300px" >
-    <noscript><img data-ignore  class="alignnone size-medium wp-image-133" style="font-size: 1rem;" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.26-AM-300x141.png" alt="" width="300" height="141" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.26-AM-300x141.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.26-AM.png 573w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone size-medium wp-image-133" style="font-size: 1rem;" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.26-AM-300x141.png" alt="" width="300" height="141" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.26-AM-300x141.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.26-AM.png 573w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 
 <p>We can calculate precision-recall and f1-score as follows.</p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-132" style="font-size: 1rem;" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.38-AM-300x149.png" alt="" width="300" height="149" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.38-AM-300x149.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.38-AM.png 530w" sizes="(max-width: 300px) 100vw, 300px" >
-    <noscript><img data-ignore  class="alignnone size-medium wp-image-132" style="font-size: 1rem;" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.38-AM-300x149.png" alt="" width="300" height="149" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.38-AM-300x149.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.38-AM.png 530w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone size-medium wp-image-132" style="font-size: 1rem;" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.38-AM-300x149.png" alt="" width="300" height="149" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.38-AM-300x149.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.38-AM.png 530w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-131" style="font-size: 1rem;" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.50-AM-300x159.png" alt="" width="300" height="159" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.50-AM-300x159.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.50-AM.png 543w" sizes="(max-width: 300px) 100vw, 300px" >
-    <noscript><img data-ignore  class="alignnone size-medium wp-image-131" style="font-size: 1rem;" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.50-AM-300x159.png" alt="" width="300" height="159" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.50-AM-300x159.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.50-AM.png 543w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone size-medium wp-image-131" style="font-size: 1rem;" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.50-AM-300x159.png" alt="" width="300" height="159" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.50-AM-300x159.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.50-AM.png 543w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 
 <p>Normally, the higher the precision, recall and f1-score are means the better performance.</p>
 
@@ -811,13 +715,7 @@ in <a href="/hydejack/" class="flip-title">Welcome to my world! 🚀</a> / <span
 
 <p>To choose what kind of decision trees to use, we can refer to this picture.</p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone wp-image-134" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-1.53.45-AM-300x249.png" alt="" width="328" height="272" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-1.53.45-AM-300x249.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-1.53.45-AM.png 531w" sizes="(max-width: 328px) 100vw, 328px" >
-    <noscript><img data-ignore  class="alignnone wp-image-134" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-1.53.45-AM-300x249.png" alt="" width="328" height="272" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-1.53.45-AM-300x249.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-1.53.45-AM.png 531w" sizes="(max-width: 328px) 100vw, 328px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone wp-image-134" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-1.53.45-AM-300x249.png" alt="" width="328" height="272" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-1.53.45-AM-300x249.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-1.53.45-AM.png 531w" sizes="(max-width: 328px) 100vw, 328px" /></p>
 
 <h3 id="random-forest-and-extremely-randomized-trees"><span id="Random_Forest_and_Extremely_Randomized_Trees">Random Forest and Extremely Randomized Trees</span></h3>
 
@@ -918,23 +816,11 @@ print('Test accuracy:', test_acc)
 
 <p>The basic idea of CNN is quite straight-forward. It’s baiscally using a <strong>filter</strong>(or <strong>kernel</strong>) to scan the image, from left to right, top to down. It will calculate the dot product and finally output a smaller image.</p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-150" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.05-PM-300x183.png" alt="" width="300" height="183" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.05-PM-300x183.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.05-PM.png 514w" sizes="(max-width: 300px) 100vw, 300px" >
-    <noscript><img data-ignore  class="alignnone size-medium wp-image-150" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.05-PM-300x183.png" alt="" width="300" height="183" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.05-PM-300x183.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.05-PM.png 514w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone size-medium wp-image-150" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.05-PM-300x183.png" alt="" width="300" height="183" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.05-PM-300x183.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.05-PM.png 514w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 
 <p>Different kernels may have different values, which gives them different functions. For example, it can be used for blurring an image or finding horizontal edges. And the kernels are actually unknown and are learned.</p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-149" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.36-PM-300x187.png" alt="" width="300" height="187" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.36-PM-300x187.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.36-PM.png 527w" sizes="(max-width: 300px) 100vw, 300px" >
-    <noscript><img data-ignore  class="alignnone size-medium wp-image-149" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.36-PM-300x187.png" alt="" width="300" height="187" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.36-PM-300x187.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.36-PM.png 527w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone size-medium wp-image-149" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.36-PM-300x187.png" alt="" width="300" height="187" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.36-PM-300x187.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.36-PM.png 527w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 
 <p>Input image’s dimensions include height, width and depth(number of channels, e.g. RGB can be viewed as 3 channels). And after the conv2d layer, which has k kernels of 3x3xd, the output will be a stack of images, also known as feature maps. Output dimensions include height, width and k. And the k will be the next layer’s channel or depth.</p>
 
@@ -950,23 +836,11 @@ print('Test accuracy:', test_acc)
 
 <p><em>A standard RNN:</em></p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-152" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.31-AM-300x107.png" alt="" width="300" height="107" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.31-AM-300x107.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.31-AM-768x274.png 768w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.31-AM.png 795w" sizes="(max-width: 300px) 100vw, 300px" >
-    <noscript><img data-ignore  class="alignnone size-medium wp-image-152" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.31-AM-300x107.png" alt="" width="300" height="107" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.31-AM-300x107.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.31-AM-768x274.png 768w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.31-AM.png 795w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone size-medium wp-image-152" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.31-AM-300x107.png" alt="" width="300" height="107" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.31-AM-300x107.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.31-AM-768x274.png 768w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.31-AM.png 795w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 
 <p><em>LSTM:</em></p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone wp-image-151" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.42-AM-300x98.png" alt="" width="312" height="102" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.42-AM-300x98.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.42-AM-768x251.png 768w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.42-AM.png 861w" sizes="(max-width: 312px) 100vw, 312px" >
-    <noscript><img data-ignore  class="alignnone wp-image-151" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.42-AM-300x98.png" alt="" width="312" height="102" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.42-AM-300x98.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.42-AM-768x251.png 768w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.42-AM.png 861w" sizes="(max-width: 312px) 100vw, 312px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone wp-image-151" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.42-AM-300x98.png" alt="" width="312" height="102" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.42-AM-300x98.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.42-AM-768x251.png 768w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.42-AM.png 861w" sizes="(max-width: 312px) 100vw, 312px" /></p>
 
 <p>RNN is likely to play with other neural networks. For example, dealing with video, it will put a CNN before RNN naturally and add a dense layer as classifier at the end. For text sentiment analysis, we should put an <strong>embedding layer</strong> (common approaches for this include word2vec and GloVe) before RNN, which will turn words into vector representations that are semantically meaningful, followed by a dense layer as classifier as well.</p>
 
@@ -978,23 +852,11 @@ print('Test accuracy:', test_acc)
 
 <p><em>1D:</em></p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-155" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.32-AM-300x189.png" alt="" width="300" height="189" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.32-AM-300x189.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.32-AM.png 589w" sizes="(max-width: 300px) 100vw, 300px" >
-    <noscript><img data-ignore  class="alignnone size-medium wp-image-155" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.32-AM-300x189.png" alt="" width="300" height="189" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.32-AM-300x189.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.32-AM.png 589w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone size-medium wp-image-155" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.32-AM-300x189.png" alt="" width="300" height="189" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.32-AM-300x189.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.32-AM.png 589w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 
 <p><em>2D:</em></p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-154" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.44-AM-300x199.png" alt="" width="300" height="199" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.44-AM-300x199.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.44-AM.png 513w" sizes="(max-width: 300px) 100vw, 300px" >
-    <noscript><img data-ignore  class="alignnone size-medium wp-image-154" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.44-AM-300x199.png" alt="" width="300" height="199" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.44-AM-300x199.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.44-AM.png 513w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone size-medium wp-image-154" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.44-AM-300x199.png" alt="" width="300" height="199" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.44-AM-300x199.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.44-AM.png 513w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 
 <h3 id="dealing-with-small-datasets"><span id="Dealing_with_Small_Datasets">Dealing with Small Datasets</span></h3>
 
@@ -1012,13 +874,7 @@ print('Test accuracy:', test_acc)
 
 <p>In the end, it’s been a very great course! It covered from the very basic concepts to some higher level approaches, combining theory as well as practice. I would like to use this picture to sum up.</p>
 
-<p>
-  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-156" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.46.24-AM-300x195.png" alt="" width="300" height="195" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.46.24-AM-300x195.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.46.24-AM.png 560w" sizes="(max-width: 300px) 100vw, 300px" >
-    <noscript><img data-ignore  class="alignnone size-medium wp-image-156" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.46.24-AM-300x195.png" alt="" width="300" height="195" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.46.24-AM-300x195.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.46.24-AM.png 560w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
-    <span class="loading" slot="loading" hidden>
-      <span class="icon-cog"></span>
-    </span>
-  </hy-img></p>
+<p><img class="alignnone size-medium wp-image-156" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.46.24-AM-300x195.png" alt="" width="300" height="195" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.46.24-AM-300x195.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.46.24-AM.png 560w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 
 <p>Thanks, George! Ciao!</p>
 
