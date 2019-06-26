@@ -20,6 +20,12 @@ A quicker, cleaner way to get started blogging with [Hydejack](https://hydejack.
 4. Go to **Settings** again, look for **GitHub Pages**, set **Source** to **master branch**.
 5. Click **Save** and wait for GitHub to set up your new blag.
 
+### Deploy on Github Pages
+Update the master branch, then:
+```
+jgd --bundle
+```
+
 ## TODO
 **Update the following posts:**
 * ~~2017-08-04-hello-world.md~~
