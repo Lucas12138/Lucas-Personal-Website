@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en"><!--
+ __  __                __                                     __
+/\ \/\ \              /\ \             __                    /\ \
+\ \ \_\ \   __  __    \_\ \      __   /\_\      __       ___ \ \ \/'\
+ \ \  _  \ /\ \/\ \   /'_` \   /'__`\ \/\ \   /'__`\    /'___\\ \ , <
+  \ \ \ \ \\ \ \_\ \ /\ \L\ \ /\  __/  \ \ \ /\ \L\.\_ /\ \__/ \ \ \\`\
+   \ \_\ \_\\/`____ \\ \___,_\\ \____\ _\ \ \\ \__/.\_\\ \____\ \ \_\ \_\
+    \/_/\/_/ `/___/> \\/__,_ / \/____//\ \_\ \\/__/\/_/ \/____/  \/_/\/_/
+                /\___/                \ \____/
+                \/__/                  \/___/
+
+Powered by Hydejack v8.4.0 <https://hydejack.com/>
+-->
+
+
+
+
+
+
+
+
+
+
+
+<head>
+  
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+
+
+  
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>95-865 Unstructured Data Analytics | LUCAS LIU</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="95-865 Unstructured Data Analytics" />
+<meta name="author" content="Lucas" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Contents 1 Introduction 2 Exploratory Data Analysis 2.1 Basic Text Analysis 2.2 Feature Vector, Co-Occurrence Analysis, Correlation, Causation 2.3 Visualizing High-Dimensional Vectors 2.4 Clustering with Generative Models 2.4.1 K-Means 2.4.2 Gaussian Mixture Model (GMM) 2.4.3 Dirichlet Process Gaussian Mixture Model (DP-GMM) 2.4.4 CH Index and Gap Statistic 2.5 Hierarchical Clustering 2.5.1 Divisive Clustering 2.5.2 Agglomerative Clustering 2.6 Before You Choose a Clustering Method 2.7 Topic Modeling 3 Predictive Data Analysis 3.1 Classification 3.1.1 kNN 3.1.2 SVM 3.1.3 SVM Kernels 3.1.4 Naive Bayes 3.1.5 Method Evaluation 3.2 Regression 3.2.1 Decision Trees for Classification 3.2.2 Decision Trees for Regression 3.2.3 Random Forest and Extremely Randomized Trees 3.2.4 Boosting 3.3 Deep Learning 3.3.1 Handwritten Digit Demo 3.3.2 Convolutional Neural Network (CNN) 3.3.3 Recurrent Neural Network (RNN) 3.3.4 Gradient Descent 3.3.5 Dealing with Small Datasets" />
+<meta property="og:description" content="Contents 1 Introduction 2 Exploratory Data Analysis 2.1 Basic Text Analysis 2.2 Feature Vector, Co-Occurrence Analysis, Correlation, Causation 2.3 Visualizing High-Dimensional Vectors 2.4 Clustering with Generative Models 2.4.1 K-Means 2.4.2 Gaussian Mixture Model (GMM) 2.4.3 Dirichlet Process Gaussian Mixture Model (DP-GMM) 2.4.4 CH Index and Gap Statistic 2.5 Hierarchical Clustering 2.5.1 Divisive Clustering 2.5.2 Agglomerative Clustering 2.6 Before You Choose a Clustering Method 2.7 Topic Modeling 3 Predictive Data Analysis 3.1 Classification 3.1.1 kNN 3.1.2 SVM 3.1.3 SVM Kernels 3.1.4 Naive Bayes 3.1.5 Method Evaluation 3.2 Regression 3.2.1 Decision Trees for Classification 3.2.2 Decision Trees for Regression 3.2.3 Random Forest and Extremely Randomized Trees 3.2.4 Boosting 3.3 Deep Learning 3.3.1 Handwritten Digit Demo 3.3.2 Convolutional Neural Network (CNN) 3.3.3 Recurrent Neural Network (RNN) 3.3.4 Gradient Descent 3.3.5 Dealing with Small Datasets" />
+<link rel="canonical" href="https:///Lucas12138.github.io/2017/12/09/95-865-unstructured-data-analytics/" />
+<meta property="og:url" content="https:///Lucas12138.github.io/2017/12/09/95-865-unstructured-data-analytics/" />
+<meta property="og:site_name" content="LUCAS LIU" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-12-09T10:45:35-05:00" />
+<script type="application/ld+json">
+{"description":"Contents 1 Introduction 2 Exploratory Data Analysis 2.1 Basic Text Analysis 2.2 Feature Vector, Co-Occurrence Analysis, Correlation, Causation 2.3 Visualizing High-Dimensional Vectors 2.4 Clustering with Generative Models 2.4.1 K-Means 2.4.2 Gaussian Mixture Model (GMM) 2.4.3 Dirichlet Process Gaussian Mixture Model (DP-GMM) 2.4.4 CH Index and Gap Statistic 2.5 Hierarchical Clustering 2.5.1 Divisive Clustering 2.5.2 Agglomerative Clustering 2.6 Before You Choose a Clustering Method 2.7 Topic Modeling 3 Predictive Data Analysis 3.1 Classification 3.1.1 kNN 3.1.2 SVM 3.1.3 SVM Kernels 3.1.4 Naive Bayes 3.1.5 Method Evaluation 3.2 Regression 3.2.1 Decision Trees for Classification 3.2.2 Decision Trees for Regression 3.2.3 Random Forest and Extremely Randomized Trees 3.2.4 Boosting 3.3 Deep Learning 3.3.1 Handwritten Digit Demo 3.3.2 Convolutional Neural Network (CNN) 3.3.3 Recurrent Neural Network (RNN) 3.3.4 Gradient Descent 3.3.5 Dealing with Small Datasets","@type":"BlogPosting","headline":"95-865 Unstructured Data Analytics","dateModified":"2017-12-09T10:45:35-05:00","datePublished":"2017-12-09T10:45:35-05:00","url":"https:///Lucas12138.github.io/2017/12/09/95-865-unstructured-data-analytics/","mainEntityOfPage":{"@type":"WebPage","@id":"https:///Lucas12138.github.io/2017/12/09/95-865-unstructured-data-analytics/"},"author":{"@type":"Person","name":"Lucas"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https:///Lucas12138.github.io/assets/icons/nefertiti.png"},"name":"Lucas"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  
+
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="LUCAS LIU">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<meta name="application-name" content="LUCAS LIU">
+<meta name="msapplication-config" content="/assets/ieconfig.xml">
+
+
+<meta name="theme-color" content="rgb(25,55,71)">
+
+
+<meta name="generator" content="Hydejack v8.4.0" />
+
+<link type="application/atom+xml" rel="alternate" href="https:///Lucas12138.github.io/feed.xml" title="LUCAS LIU" />
+
+
+
+<link rel="alternate" href="https:///Lucas12138.github.io/2017/12/09/95-865-unstructured-data-analytics/" hreflang="en">
+
+<link rel="shortcut icon" href="/assets/icons/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/icons/icon.png">
+
+<link rel="manifest" href="/assets/manifest.json">
+
+
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+
+
+
+<link rel="dns-prefetch" href="/" id="_baseURL">
+<link rel="dns-prefetch" href="/assets/js/hydejack-8.4.0.js" id="_hrefJS">
+<link rel="dns-prefetch" href="/sw.js" id="_hrefSW">
+<link rel="dns-prefetch" href="/assets/bower_components/fontfaceobserver/fontfaceobserver.standalone.js" id="_hrefFFO">
+<link rel="dns-prefetch" href="/assets/bower_components/katex/dist/katex.min.js" id="_hrefKatexJS">
+<link rel="dns-prefetch" href="/assets/bower_components/katex/dist/katex.min.css" id="_hrefKatexCSS">
+<link rel="dns-prefetch" href="/assets/bower_components/katex/dist/contrib/copy-tex.min.js" id="_hrefKatexCopyJS">
+<link rel="dns-prefetch" href="/assets/bower_components/katex/dist/contrib/copy-tex.min.css" id="_hrefKatexCopyCSS">
+<link rel="dns-prefetch" href="/assets/img/swipe.svg" id="_hrefSwipeSVG">
+
+
+
+
+<script>!function(e,t){"use strict";function n(e,t,n,r){e.addEventListener?e.addEventListener(t,n,r):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}e.loadJS=function(e,r){var o=t.createElement("script");o.src=e,r&&n(o,"load",r,{once:!0});var a=t.scripts[0];return a.parentNode.insertBefore(o,a),o},e._loaded=!1,e.loadJSDeferred=function(r,o){function a(){e._loaded=!0,o&&n(d,"load",o,{once:!0});var r=t.scripts[0];r.parentNode.insertBefore(d,r)}var d=t.createElement("script");return d.src=r,e._loaded?a():n(e,"load",a,{once:!0}),d},e.setRel=e.setRelStylesheet=function(e){function n(){this.rel="stylesheet"}var r=t.getElementById(e);r.addEventListener?r.addEventListener("load",n,{once:!0}):r.onload=n}}(window,document);
+!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+</script>
+
+<script>!function(w, d) {
+    w._noPushState = false;
+    w._noDrawer = false;
+
+    /**/
+    loadJS(d.getElementById('_hrefFFO').href, function() {
+      if ('Promise' in w) Promise.all([
+        new FontFaceObserver('Noto Sans').load(),
+        new FontFaceObserver('Roboto Slab').load(),
+      ]).then(function f() { d.body.classList.add('font-active'); }, function() {});
+    });
+    /**/
+}(window, document);</script>
+
+<!--[if gt IE 8]><!---->
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="/assets/css/hydejack-8.4.0.css">
+  <link rel="stylesheet" href="/assets/icomoon/style.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400|Noto+Sans:400,400i,700,700i">
+    <noscript>
+      <style>
+        html { font-family: Noto Sans, Helvetica, Arial, sans-serif!important; }
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .heading { font-family: Roboto Slab, Helvetica, Arial, sans-serif!important; }
+      </style>
+    </noscript>
+  
+
+
+  <style id="_pageStyle">
+
+.content a:not(.btn){color:#4fb1ba;border-color:rgba(79,177,186,0.2)}.content a:not(.btn):hover{border-color:#4fb1ba}:focus{outline-color:#4fb1ba !important}.btn-primary{color:#fff;background-color:#4fb1ba;border-color:#4fb1ba}.btn-primary:focus,.btn-primary.focus,.form-control:focus,.form-control.focus{box-shadow:0 0 0 3px rgba(79,177,186,0.5)}.btn-primary:hover,.btn-primary.hover{color:#fff;background-color:#409ba3;border-color:#409ba3}.btn-primary:disabled,.btn-primary.disabled{color:#fff;background-color:#4fb1ba;border-color:#4fb1ba}.btn-primary:active,.btn-primary.active{color:#fff;background-color:#409ba3;border-color:#409ba3}::selection{color:#fff;background:#4fb1ba}::-moz-selection{color:#fff;background:#4fb1ba}
+
+</style>
+
+
+<!--<![endif]-->
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109710284-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-109710284-1');
+</script>
+
+
+</head>
+
+<body>
+  <div id="_navbar" class="navbar fixed-top">
+  <div class="content">
+    <div class="nav-btn-bar">
+      <span class="sr-only">Jump to:</span>
+      <a id="_menu" class="nav-btn no-hover fl" href="#_navigation">
+        <span class="sr-only">Navigation</span>
+        <span class="icon-menu"></span>
+      </a>
+    </div>
+  </div>
+</div>
+<hr class="sr-only" hidden />
+
+
+<hy-push-state
+  replace-ids="_main"
+  link-selector="a[href]:not([href*='/assets/']):not(.external):not(.no-push-state)"
+  duration="250"
+  script-selector="script:not([type^='math/tex'])"
+  prefetch
+>
+  
+    <main
+  id="_main"
+  class="content fade-in layout-post"
+  role="main"
+  data-color="rgb(79,177,186)"
+  data-theme-color="rgb(25,55,71)"
+  
+    data-image="/assets/img/sidebar-bg.jpg"
+    data-overlay
+  
+  >
+  
+
+
+
+
+<article id="post-2017-12-09-95-865-unstructured-data-analytics" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title">
+      
+        95-865 Unstructured Data Analytics
+      
+    </h1>
+
+    <p class="post-date heading">
+      
+      <time datetime="2017-12-09T10:45:35-05:00">09 Dec 2017</time>
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+in <a href="/hydejack/" class="flip-title">Welcome to my world! 🚀</a> / <span>Data analytics</span>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+    </p>
+
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+
+  </header>
+
+  
+    <div id="toc_container" class="no_bullets">
+  <p class="toc_title">
+    Contents
+  </p>
+  
+  <ul class="toc_list">
+    <li>
+      <a href="#Introduction"><span class="toc_number toc_depth_1">1</span> Introduction</a>
+    </li>
+    <li>
+      <a href="#Exploratory_Data_Analysis"><span class="toc_number toc_depth_1">2</span> Exploratory Data Analysis</a><ul>
+        <li>
+          <a href="#Basic_Text_Analysis"><span class="toc_number toc_depth_2">2.1</span> Basic Text Analysis</a>
+        </li>
+        <li>
+          <a href="#Feature_Vector_Co-Occurrence_Analysis_Correlation_Causation"><span class="toc_number toc_depth_2">2.2</span> Feature Vector, Co-Occurrence Analysis, Correlation, Causation</a>
+        </li>
+        <li>
+          <a href="#Visualizing_High-Dimensional_Vectors"><span class="toc_number toc_depth_2">2.3</span> Visualizing High-Dimensional Vectors</a>
+        </li>
+        <li>
+          <a href="#Clustering_with_Generative_Models"><span class="toc_number toc_depth_2">2.4</span> Clustering with Generative Models</a><ul>
+            <li>
+              <a href="#K-Means"><span class="toc_number toc_depth_3">2.4.1</span> K-Means</a>
+            </li>
+            <li>
+              <a href="#Gaussian_Mixture_Model_GMM"><span class="toc_number toc_depth_3">2.4.2</span> Gaussian Mixture Model (GMM)</a>
+            </li>
+            <li>
+              <a href="#DirichletProcess_Gaussian_Mixture_Model_DP-GMM"><span class="toc_number toc_depth_3">2.4.3</span> Dirichlet Process Gaussian Mixture Model (DP-GMM)</a>
+            </li>
+            <li>
+              <a href="#CH_Index_and_Gap_Statistic"><span class="toc_number toc_depth_3">2.4.4</span> CH Index and Gap Statistic</a>
+            </li>
+          </ul>
+        </li>
+        
+        <li>
+          <a href="#Hierarchical_Clustering"><span class="toc_number toc_depth_2">2.5</span> Hierarchical Clustering</a><ul>
+            <li>
+              <a href="#Divisive_Clustering"><span class="toc_number toc_depth_3">2.5.1</span> Divisive Clustering</a>
+            </li>
+            <li>
+              <a href="#Agglomerative_Clustering"><span class="toc_number toc_depth_3">2.5.2</span> Agglomerative Clustering</a>
+            </li>
+          </ul>
+        </li>
+        
+        <li>
+          <a href="#Before_You_Choose_a_Clustering_Method"><span class="toc_number toc_depth_2">2.6</span> Before You Choose a Clustering Method</a>
+        </li>
+        <li>
+          <a href="#Topic_Modeling"><span class="toc_number toc_depth_2">2.7</span> Topic Modeling</a>
+        </li>
+      </ul>
+    </li>
+    
+    <li>
+      <a href="#Predictive_Data_Analysis"><span class="toc_number toc_depth_1">3</span> Predictive Data Analysis</a><ul>
+        <li>
+          <a href="#Classification"><span class="toc_number toc_depth_2">3.1</span> Classification</a><ul>
+            <li>
+              <a href="#kNN"><span class="toc_number toc_depth_3">3.1.1</span> kNN</a>
+            </li>
+            <li>
+              <a href="#SVM"><span class="toc_number toc_depth_3">3.1.2</span> SVM</a>
+            </li>
+            <li>
+              <a href="#SVM_Kernels"><span class="toc_number toc_depth_3">3.1.3</span> SVM Kernels</a>
+            </li>
+            <li>
+              <a href="#Naive_Bayes"><span class="toc_number toc_depth_3">3.1.4</span> Naive Bayes</a>
+            </li>
+            <li>
+              <a href="#Method_Evaluation"><span class="toc_number toc_depth_3">3.1.5</span> Method Evaluation</a>
+            </li>
+          </ul>
+        </li>
+        
+        <li>
+          <a href="#Regression"><span class="toc_number toc_depth_2">3.2</span> Regression</a><ul>
+            <li>
+              <a href="#Decision_Trees_for_Classification"><span class="toc_number toc_depth_3">3.2.1</span> Decision Trees for Classification</a>
+            </li>
+            <li>
+              <a href="#Decision_Trees_for_Regression"><span class="toc_number toc_depth_3">3.2.2</span> Decision Trees for Regression</a>
+            </li>
+            <li>
+              <a href="#Random_Forest_and_Extremely_Randomized_Trees"><span class="toc_number toc_depth_3">3.2.3</span> Random Forest and Extremely Randomized Trees</a>
+            </li>
+            <li>
+              <a href="#Boosting"><span class="toc_number toc_depth_3">3.2.4</span> Boosting</a>
+            </li>
+          </ul>
+        </li>
+        
+        <li>
+          <a href="#Deep_Learning"><span class="toc_number toc_depth_2">3.3</span> Deep Learning</a><ul>
+            <li>
+              <a href="#Handwritten_Digit_Demo"><span class="toc_number toc_depth_3">3.3.1</span> Handwritten Digit Demo</a>
+            </li>
+            <li>
+              <a href="#Convolutional_Neural_Network_CNN"><span class="toc_number toc_depth_3">3.3.2</span> Convolutional Neural Network (CNN)</a>
+            </li>
+            <li>
+              <a href="#Recurrent_Neural_Network_RNN"><span class="toc_number toc_depth_3">3.3.3</span> Recurrent Neural Network (RNN)</a>
+            </li>
+            <li>
+              <a href="#Gradient_Descent"><span class="toc_number toc_depth_3">3.3.4</span> Gradient Descent</a>
+            </li>
+            <li>
+              <a href="#Dealing_with_Small_Datasets"><span class="toc_number toc_depth_3">3.3.5</span> Dealing with Small Datasets</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<h1 id="introduction"><span id="Introduction">Introduction</span></h1>
+
+<p>This is what I learned in a CMU course, 95-865 Unstructured Data Analytics, from <a href="http://www.andrew.cmu.edu/user/georgech/">George Chen</a>. I learned clustering, topic modeling, classification, regression, deep learning and method evaluation methods. I did assignments about Zipf’s Law with spaCY, mobile applications analysis with LDA, email spam detection with kNN, Bernoulli Naive Bayes and SVM, tweet sentiment analysis with RNN, image segmentation with CNN. Because some datasets are extremely large, AWS was introduced as well.</p>
+
+<p>I have to say it’s a very good combination of theory and practice. I did learn a lot from this course.</p>
+
+<h1 id="exploratory-data-analysis"><span id="Exploratory_Data_Analysis">Exploratory Data Analysis</span></h1>
+
+<h2 id="basic-text-analysis"><span id="Basic_Text_Analysis">Basic Text Analysis</span></h2>
+
+<p>The very first step could be extracting words from the document. Then we will have a simple term frequencies table. Normally, the order of the words doesn’t matter. It’s like putting the words into a bag, also known as <strong>Bag of Words Model</strong>. We can also apply this technique to many documents and we call the resulting term frequencies <strong>collection term frequency (ctf)</strong>. From the frequencies, we can find some interesting probability distributions which are a key component to the success of many modern AI methods.</p>
+
+<p>In text analysis, we need to think about <strong>stop words</strong>. Usually, we should remove them. But, sometimes we’d better keep them. For example, <em>“To be or not to be”</em>. Also, there may be words that have same meaning, like “The” and “the”, “walk” and “walking”, “democracy” and “democratization” etc. Merging them together is called <strong>lemmatization</strong>. On the other hand, one word may have multiple meanings. So, we may want to split it up to multiple words. This problem is called word sense <strong>disambiguation (WSD)</strong>. Some conventional methods to deal with it are knowledge-based methods, semi-supervised methods, supervised methods and unsupervised methods. Besides, we should treat some phrases as a single word, such as “United States”.</p>
+
+<p>Some other common NLP tasks include <strong>tokenization</strong>(find atomic words), <strong>part-of-speech tagging</strong>(find nouns, verbs, etc.), <strong>sentence recognition</strong>(figure out when a sentence ends) etc.</p>
+
+<p>So far, if we use only one word as element of our model. It’s called <strong>unigram</strong> model. This model may have some problems. Because it ignores word order and word agreement. For example, P(w = hello world) = P(w = hello) * P(w = world) = P(w = world hello). Word agreement means it cannot distinguish good sentences and bad sentences, such as P(w = i am … we are …) = P(w = i are … we am …). For this problem, we can use <strong>bigram</strong> or <strong>n-gram</strong> models. It means we can use 2 or more words as element. We can solve the problems and increase the vocabulary size dramatically at the same time.</p>
+
+<p>For NLP, python has a good open-source library called <strong>spaCy</strong>.</p>
+
+<h2 id="feature-vector-co-occurrence-analysis-correlation-causation"><span id="Feature_Vector_Co-Occurrence_Analysis_Correlation_Causation">Feature Vector, Co-Occurrence Analysis, Correlation, Causation</span></h2>
+
+<p>Now, we want to process the term frequencies table a little bit. We represent terms as “features” and use frequencies as values. Then we can get a <strong>feature vector</strong>, like this [0.1, 0.3, 0.2, 0.4] representing “sunny”, “cloudy”, “rainy”, “snowy”.</p>
+
+<p>We may find words in text often seem to have some kind of relationship. For example, “Tim Cook” and “Apple”, “Elon Mush” and “Tesla”. We can use <strong>co-occurrences</strong> to figure it out. But, speaking of co-occurrences, there’re also many approaches. We can count the number of lines in which two entities co-occur. We can count the number of paragraphs, documents etc. as well. We should use the approach which makes the most sense in the specific case.</p>
+
+<p>Here’s a use case of co-occurrences.</p>
+
+<p>Assume we are looking at a picture of zebra and grass and there’re only black, white and green pixels. Then we start counting: for each pixel, look at 4 neighboring pixels, compare the values and add the values to a table.</p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone wp-image-101" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.16.07-PM-300x75.png" alt="" width="348" height="87" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.16.07-PM-300x75.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.16.07-PM-768x192.png 768w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.16.07-PM.png 785w" sizes="(max-width: 348px) 100vw, 348px" >
+    <noscript><img data-ignore  class="alignnone wp-image-101" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.16.07-PM-300x75.png" alt="" width="348" height="87" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.16.07-PM-300x75.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.16.07-PM-768x192.png 768w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.16.07-PM.png 785w" sizes="(max-width: 348px) 100vw, 348px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<p>Now, think of the bag of words model. We take [green, green], [green, white], [green, black]… into the bag. There will be 5750 cards in the bag. And we can calculate the probabilities of P(green, white), P(white, black), P(white) etc.</p>
+
+<p>Then we can use <strong>pointwise mutual information (PMI)</strong> to measure surprise. The higher PMI means more surprising. The formula for PMI is as follows.</p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-102" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.29.21-PM-300x118.png" alt="" width="300" height="118" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.29.21-PM-300x118.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.29.21-PM.png 353w" sizes="(max-width: 300px) 100vw, 300px" >
+    <noscript><img data-ignore  class="alignnone size-medium wp-image-102" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.29.21-PM-300x118.png" alt="" width="300" height="118" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.29.21-PM-300x118.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-1.29.21-PM.png 353w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<p>P(A, B) represents A and B co-occurring. P(A) is A occurring. P(B) is B occurring. If A and B are independent, P(A, B) = P(A) P(B) and PMI = 0.</p>
+
+<p>In practice, it’s helpful to generalize PMI. We can add a positive tune parameter to it.</p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-106" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.19.13-PM-300x92.png" alt="" width="300" height="92" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.19.13-PM-300x92.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.19.13-PM.png 375w" sizes="(max-width: 300px) 100vw, 300px" >
+    <noscript><img data-ignore  class="alignnone size-medium wp-image-106" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.19.13-PM-300x92.png" alt="" width="300" height="92" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.19.13-PM-300x92.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.19.13-PM.png 375w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<p>PMI is used to measure one pair of entities. To measure all pairs we can use <strong>Phi-square</strong> and <strong>Chi-square</strong>. Its formula is as follows.</p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-105" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.07.56-PM-300x83.png" alt="" width="300" height="83" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.07.56-PM-300x83.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.07.56-PM.png 458w" sizes="(max-width: 300px) 100vw, 300px" >
+    <noscript><img data-ignore  class="alignnone size-medium wp-image-105" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.07.56-PM-300x83.png" alt="" width="300" height="83" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.07.56-PM-300x83.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-23-at-8.07.56-PM.png 458w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<p>Chi-square = N * Phi-square, where N is the total number of occurrences like 5750 cards before.</p>
+
+<p>Then we can use simple <strong>scatter plot</strong> to look if there’s any pattern in data. It can be negatively correlated, positively correlated or not really correlated. But two variable being correlated doesn’t mean one can predict another.</p>
+
+<p><strong>Correlation</strong> is not <strong>causation</strong>. For example, sunspot number and number of Republican senators may be highly correlated. But they are totally not related things. There’s no causation between them. To find real causality, we should divide users into 2 groups, <strong>treatment group</strong> and <strong>control group</strong>. Then we can use <strong>randomized controlled trial (RCT)</strong>, also called <strong>A/B testing</strong>. Amazon is using this method to figure out webpage layout to maximize revenue. Khan Academy is using this to find out how to present materials to improve learning.</p>
+
+<p>Besides, what is the difference between probability theory and statistics?</p>
+
+<p>Probability theory:</p>
+
+<ul>
+  <li>Assume we know model of randomness and parameters</li>
+  <li>Reason about what happens in the model, what data X look like</li>
+</ul>
+
+<p>Statistics:</p>
+
+<ul>
+  <li>Assume we collect data X</li>
+  <li>Reason about what model of randomness make sense, and what the parameters are</li>
+</ul>
+
+<h2 id="visualizing-high-dimensional-vectors"><span id="Visualizing_High-Dimensional_Vectors">Visualizing High-Dimensional Vectors</span></h2>
+
+<p>We live in a 3-dimensional space. It can be very hard for us to imagine high-dimensional data. So, to gain some insights, we need to reduce the dimensionality to 1, 2, or 3.</p>
+
+<p>One common linear approach is <strong>principal component analysis (PCA)</strong>. It basically flattens the data to lower dimensionality. For example, from 2D to 1D, we can squeeze data to one line. In that case, there’re 360 degrees. It is about finding the line that ensures the most variability. PCA is about finding top k orthogonal directions that explain the most variance in the data. Here is a visualization <a href="http://setosa.io/ev/principal-component-analysis/">example</a>.</p>
+
+<p>But, what if the data is extremely non-linear distributed. Imagine a Swiss Roll. PCA won’t work well in this case. Then we should use some non-linear dimensionality reduction techniques, like finding low-dimensional “manifold” which is called <strong>manifold learning</strong>. 2 specific approaches for manifold learning are <strong>Isomap</strong> and <strong>t-SNE</strong>. Isomap is about calculating the distance between data points and finding nearest neighbors. t-SNE represents t-distributed stochastic neighbor embedding. One significant difference between Isomap and t-SNE is that t-SNE doesn’t use deterministic definition of which points are neighbors. It uses probabilistic notation instead. Points similarity probability distribution will help here. It improves the low-dimensional distribution representation until it’s as close as the original one as possible.</p>
+
+<p>Normally, PCA and t-SNE are good candidates for your first try. They cover both linear and non-linear potentiality.</p>
+
+<h2 id="clustering-with-generative-models"><span id="Clustering_with_Generative_Models">Clustering with Generative Models</span></h2>
+
+<p>Clustering is a highly useful process, which can divide entities into different groups. One example is recommendation system, where clustering can give different recommendations to different clusters. We can build a user-item matrix and figure out the similarity among users.</p>
+
+<p>In terms of similarity, there’s usually not a “best” way to define it. There’re 2 popular methods for it, <strong>cosine similarity</strong> and <strong>Euclidean distance</strong>.</p>
+
+<ul>
+  <li>Cosine similarity:</li>
+</ul>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-109" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.06.22-AM-300x79.png" alt="" width="300" height="79" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.06.22-AM-300x79.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.06.22-AM.png 481w" sizes="(max-width: 300px) 100vw, 300px" >
+    <noscript><img data-ignore  class="alignnone size-medium wp-image-109" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.06.22-AM-300x79.png" alt="" width="300" height="79" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.06.22-AM-300x79.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.06.22-AM.png 481w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<ul>
+  <li>Euclidean distance:</li>
+</ul>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-110" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.12.35-AM-300x69.png" alt="" width="300" height="69" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.12.35-AM-300x69.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.12.35-AM.png 512w" sizes="(max-width: 300px) 100vw, 300px" >
+    <noscript><img data-ignore  class="alignnone size-medium wp-image-110" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.12.35-AM-300x69.png" alt="" width="300" height="69" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.12.35-AM-300x69.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-24-at-10.12.35-AM.png 512w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<p>For comparing similarities of <strong>time series</strong>, we need to align them first. Think of shifting one along x-axis to align with another. Then the distance can be the area between the two.</p>
+
+<p>To <strong>diagnose</strong> the similarity function’s result, we can pick one data point and compute its similarity with all the other points. Find out the highest one. Look if you can interpret them. If not, the similarity function isn’t very good.</p>
+
+<p>Let’s move from similarity to clusters. There’re two main clustering methods, <strong>generative models</strong> and <strong>hierarchical clustering</strong>.</p>
+
+<p>Generative models mean we first pretend the data generated by specific model with parameters. Learn the parameters(“fit” model to data). Then use fitted model to determine cluster assignments.</p>
+
+<p>Hierarchical clustering won’t assume any model. It starts with all data points in one cluster then decide on how to split or start with all points in its own cluster and then merge them. In short, it can be top-down or bottom-up.</p>
+
+<p>We will talk about generative models first, then hierarchical clustering.</p>
+
+<h3 id="k-means"><span id="K-Means">K-Means</span></h3>
+
+<p>K-means belongs to generative models. We need to decide how many clusters we want first, which is k. Then it will guess where the centers of cluster are. Assign each point to belong to the closest cluster and update cluster means. Repeat this process until convergence.</p>
+
+<p>In other words, it repeat find the closest centroid -&gt; update centroid process until it finds the perfect centroids. Here is a <a href="http://stanford.edu/class/ee103/visualizations/kmeans/kmeans.html">visualization</a> of it. Obviously, k matters a lot here.</p>
+
+<p>It is suggested to incrementally add centers and add them far from existing centers.</p>
+
+<h3 id="gaussian-mixture-model-gmm"><span id="Gaussian_Mixture_Model_GMM">Gaussian Mixture Model (GMM)</span></h3>
+
+<p>Gaussian mixture model is also a generative model. It assumes data points sampled independently from different Gaussian distributions. Each Gaussian distribution can be treated as a cluster.</p>
+
+<p>For GMM, learning (“fitting”) the parameters is about data points and k as input, mean, covariance of each gaussian distribution as output.</p>
+
+<p>GMM uses <strong>EM(Expectation-Maximization) algorithm</strong>. In simple words, EM is repeating calculating expectation and maximize expectation. Unlike k-means, which hard assigns each point to clusters, EM does a soft assignment probabilistically.</p>
+
+<p>Normally, k-means doesn’t work as well as GMM if the ellipses are not typical circles.</p>
+
+<h3 id="dirichletprocess-gaussian-mixture-model-dp-gmm"><span id="DirichletProcess_Gaussian_Mixture_Model_DP-GMM">Dirichlet Process Gaussian Mixture Model (DP-GMM)</span></h3>
+
+<p>Dirichlet process is one of the stochastic processes. It is a probability distribution of probability distribution.</p>
+
+<p>For DP-GMM, you don’t have to decide on k manually. Number of clusters is effectively random and can grow with the data amount. But, you will need to choose a different parameter which indicates how likely new points are to form new clusters vs join existing clusters.</p>
+
+<p>We can also apply Dirichlet process to k-means. Then it will be <strong>DP-means</strong>. It also has another parameter, which is the square of the radius around one data point to decide on how to divide the clusters.</p>
+
+<h3 id="ch-index-and-gap-statistic"><span id="CH_Index_and_Gap_Statistic">CH Index and Gap Statistic</span></h3>
+
+<p>We can also choose a cost function to compute for different k. The pick the k which achieved the lowest cost.</p>
+
+<p>One approach with flaw is <strong>Residual Sum of Squares (RSS)</strong>. For each cluster, we can calculate a RSS. Finally, we can sum RSS of the k clusters. But, why it is not a very good approach? Think of each data point is a cluster. The RSS will be 0. RSS measures with-in cluster variation.</p>
+
+<p>A better approach is considering both RSS and between-cluster variation.</p>
+
+<p>Let W = RSS,</p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-117" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.19.27-PM-300x80.png" alt="" width="300" height="80" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.19.27-PM-300x80.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.19.27-PM.png 433w" sizes="(max-width: 300px) 100vw, 300px" >
+    <noscript><img data-ignore  class="alignnone size-medium wp-image-117" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.19.27-PM-300x80.png" alt="" width="300" height="80" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.19.27-PM-300x80.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.19.27-PM.png 433w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<p>n = total number of points</p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone size-full wp-image-116" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.20.07-PM.png" alt="" width="195" height="59" >
+    <noscript><img data-ignore  class="alignnone size-full wp-image-116" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.20.07-PM.png" alt="" width="195" height="59" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<p>This approach is called <strong>CH index</strong>,<strong> </strong>where CH stands for <span style="font-size: 1rem;">Calinski and Harabasz.</span></p>
+
+<p>Another good approach is <strong>gap statistic</strong>.</p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-118" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.30.31-PM-300x59.png" alt="" width="300" height="59" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.30.31-PM-300x59.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.30.31-PM.png 338w" sizes="(max-width: 300px) 100vw, 300px" >
+    <noscript><img data-ignore  class="alignnone size-medium wp-image-118" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.30.31-PM-300x59.png" alt="" width="300" height="59" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.30.31-PM-300x59.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.30.31-PM.png 338w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<p>It uses <strong>Mean Squared Error (MSE)</strong> and <strong>Maximum Likelihood Estimation (MLE)</strong>. Here’s a paper about <a href="https://web.stanford.edu/~hastie/Papers/gap.pdf">gap statistic</a>.</p>
+
+<h2 id="hierarchical-clustering"><span id="Hierarchical_Clustering">Hierarchical Clustering</span></h2>
+
+<p>Let’s move on from generative models to hierarchical clustering.</p>
+
+<h3 id="divisive-clustering"><span id="Divisive_Clustering">Divisive Clustering</span></h3>
+
+<p>This method firstly assumes all data points in one cluster. Then use a method to split the cluster(e.g., k-means, k=2). Then decide on the next cluster to split(e.g., pick the cluster with highest RSS). Repeat this process until some termination condition is reached.</p>
+
+<h3 id="agglomerative-clustering"><span id="Agglomerative_Clustering">Agglomerative Clustering</span></h3>
+
+<p>Agglomerative clustering basically is a reverse version of divisive clustering. It first assumes each point is a cluster. Then find the most “similar” two clusters(e.g., pick pair of clusters which have closest cluster center). Then merge them.Repeat this process until some termination condition is reached.</p>
+
+<p>There’re many ways to define “close” in agglomerative clustering. They are <strong>single linkage</strong>, <strong>complete linkage</strong>, <strong>centroid linkage</strong>, <strong>average linage</strong>. Basically, they calculate the distance of nearest points, farthest points, centers, each point and average it between clusters, respectively. For the first two, clustering stays the same with monotonic transform. For the last two, clustering may change. They are not perfect. They fit different cases.</p>
+
+<p>Finally, these two can be visualized with a <strong>dendrogram</strong>. Like this.</p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-121" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.52.19-PM-300x178.png" alt="" width="300" height="178" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.52.19-PM-300x178.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.52.19-PM.png 676w" sizes="(max-width: 300px) 100vw, 300px" >
+    <noscript><img data-ignore  class="alignnone size-medium wp-image-121" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.52.19-PM-300x178.png" alt="" width="300" height="178" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.52.19-PM-300x178.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-2.52.19-PM.png 676w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<h2 id="before-you-choose-a-clustering-method"><span id="Before_You_Choose_a_Clustering_Method">Before You Choose a Clustering Method</span></h2>
+
+<ul>
+  <li>There’re some questions to think about.</li>
+  <li>Does Euclidean distance make sense?</li>
+  <li>Do you care about which cluster the new points belong to?</li>
+  <li>After visualization, do the clusters seem interpretable?</li>
+  <li>Compare the cluster centers, do they look reasonable?</li>
+  <li>How would you like to measure the result of clustering?</li>
+</ul>
+
+<h2 id="topic-modeling"><span id="Topic_Modeling">Topic Modeling</span></h2>
+
+<p>In real-world cases, clustering is often not enough. One data point may belong to several clusters. For example, two users may share one Netflix account. Then we prefer assigning data points to multiple topics. This process is called <strong>topic modeling</strong>.</p>
+
+<p><a href="http://ai.stanford.edu/~ang/papers/jair03-lda.pdf"><strong>Latent Dirichlet Allocation (LDA)</strong></a> is a topic modeling approach. The basic idea is that documents are represented as random mixtures over latent topics, where each topic is characterized by a distribution of words.</p>
+
+<p>For LDA, the input is a “document-word” matrix and a pre-specified number of topics k. And the output will be what the k topics are, which is also k topics’ distribution of words.</p>
+
+<p>“document-word” matrix -&gt; “topic-document” matrix -&gt; “word-topic” matrix</p>
+
+<p>So, what if we want to automatically select k? The Bayesian nonparametric variant of LDA is <strong>Hierarchical Dirichlet Process(HDP)</strong>. It’s similar with GMM to DP-GMM.</p>
+
+<p>There’re also some methods to measure the result. For a specific topic, look at <em>m</em> most probable words(“top words”):</p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-124" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-8.02.27-PM-300x116.png" alt="" width="300" height="116" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-8.02.27-PM-300x116.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-8.02.27-PM-768x297.png 768w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-8.02.27-PM.png 849w" sizes="(max-width: 300px) 100vw, 300px" >
+    <noscript><img data-ignore  class="alignnone size-medium wp-image-124" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-8.02.27-PM-300x116.png" alt="" width="300" height="116" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-8.02.27-PM-300x116.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-8.02.27-PM-768x297.png 768w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-26-at-8.02.27-PM.png 849w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<p>Beyond LDA and HDP, there’re also many other topic modeling methods. For example, correlated topic models, Pachinko allocation, biterm topic models, anchor word topic models, dynamic topic models…</p>
+
+<h1 id="predictive-data-analysis"><span id="Predictive_Data_Analysis">Predictive Data Analysis</span></h1>
+
+<h2 id="classification"><span id="Classification">Classification</span></h2>
+
+<p>One main difference between classification and clustering is that, in terms of classification, data have labels. It’s thereby supervised. And clustering is unsupervised.</p>
+
+<p>Labeled data: {(x1, y1), (x2, y2), (x3, y3)…}, where y stands for label.</p>
+
+<p>The labels have some types.</p>
+
+<ul>
+  <li>Binary: yi belongs to {0, 1}</li>
+  <li>Multi-class: yi belongs to {cat, dog, fish…}</li>
+  <li>Multi-label: yi belongs to {(cat, dog), (car, bike)…}</li>
+</ul>
+
+<p>Also, there are many kinds of classification models.</p>
+
+<ul>
+  <li>Linear function</li>
+  <li>Tree-based</li>
+  <li>Nearest-neighbor</li>
+  <li>…</li>
+</ul>
+
+<h3 id="knn"><span id="kNN">kNN</span></h3>
+
+<p>NN simply represents Nearest-neighbor. The training data will be like {(x1, y1), (x2, y2)…}. Then given a test point, say (xi, yi), it will compare its k neighbors. There will be a majority vote first. The test point will be classified to the majority type. But if the number of votes between different classes are equal. The algorithm will break the tie randomly.</p>
+
+<p>According to <a href="http://ieeexplore.ieee.org/document/1053964/">Cover and Hart</a>, if the optimal classifier is with error <em>e</em>, 1-NN with k = 1 will have error less than 2<em>e</em>.</p>
+
+<h3 id="svm"><span id="SVM">SVM</span></h3>
+
+<p>SVM is a linear classifier. It assumes the data is linearly separable and the goal is to find the best linear separator. To measure how good is the separator, it calculates the <strong>margin</strong>. The margin is <span style="font-size: 1rem;">perpendicular distance between the separator and the nearest data point. The goal can also be interpreted as finding </span>minimum margin separator.<span style="font-size: 1rem;"> </span></p>
+
+<h3 id="svm-kernels"><span id="SVM_Kernels">SVM Kernels</span></h3>
+
+<p>What if we want to separate non-linearly separable data points?</p>
+
+<p>Using kernels!</p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-126" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-12.55.48-AM-300x141.png" alt="" width="300" height="141" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-12.55.48-AM-300x141.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-12.55.48-AM.png 311w" sizes="(max-width: 300px) 100vw, 300px" >
+    <noscript><img data-ignore  class="alignnone size-medium wp-image-126" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-12.55.48-AM-300x141.png" alt="" width="300" height="141" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-12.55.48-AM-300x141.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-12.55.48-AM.png 311w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<p>The rough idea is basically taking data into higher dimension by kernel methods. Then the data may be linearly separable in higher dimension.</p>
+
+<p>Some example kernels are as follows:</p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-127" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-1.00.21-AM-300x90.png" alt="" width="300" height="90" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-1.00.21-AM-300x90.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-1.00.21-AM.png 574w" sizes="(max-width: 300px) 100vw, 300px" >
+    <noscript><img data-ignore  class="alignnone size-medium wp-image-127" src="/wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-1.00.21-AM-300x90.png" alt="" width="300" height="90" srcset="/wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-1.00.21-AM-300x90.png 300w, /wp-content/uploads/2017/11/Screen-Shot-2017-11-27-at-1.00.21-AM.png 574w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<h3 id="naive-bayes"><span id="Naive_Bayes">Naive Bayes</span></h3>
+
+<p>Unlike kNN calculating by distance and SVM calculating by margin, Naive Bayes takes advantage of probability theory, Bayes’ Theorem specifically.</p>
+<pre><code class="language-aidl">P(h|d) = (P(d|h) * P(h)) / P(d)
+</code></pre>
+
+<ul>
+  <li><strong>P(h|d)</strong> is the probability of hypothesis h given the data d. This is called the posterior probability.</li>
+  <li><strong>P(d|h)</strong> is the probability of data d given that the hypothesis h was true.</li>
+  <li><strong>P(h)</strong> is the probability of hypothesis h being true (regardless of the data). This is called the prior probability of h.</li>
+  <li><strong>P(d)</strong> is the probability of the data (regardless of the hypothesis).</li>
+</ul>
+
+<p>So, how does this theorem help? Let me give you an example.</p>
+
+<p>Assume we are classifying people as male or female. And we have the features like long hair or not, higher than 170cm or not. Then one possible feature vector can be v = [0, 1], which means short hair and higher than 170cm.</p>
+
+<p>Then based on the theorem,</p>
+
+<pre><code class="language-aidl">p(male|v) = p(v|male) * p(male) / p(v)
+</code></pre>
+
+<p>It will be feasible to calculate. Also, if we are using this approach, one important assumption is that it assumes each feature is conditionally independent of others.</p>
+
+<p>Then we can use this model the fit parameters, predict and smooth the results.</p>
+
+<h3 id="method-evaluation"><span id="Method_Evaluation">Method Evaluation</span></h3>
+
+<p>There’re some steps to evaluate the previous models.</p>
+
+<p><em>Data preparation:</em></p>
+
+<p>A simple method is splitting data randomly into <strong>train</strong>, <strong>validation</strong> and <strong>test</strong>. And the split can be stratified based on the label.</p>
+
+<p>To avoid wasting valuable training data, we can use another method, which is called k-Fold Cross-Validation. It will split data randomly into <strong>train</strong> and <strong>test</strong>. Then it will split train data randomly into k equal folds. It will train on one fold and validate on the remaining folds for k times. Finally, it will average the k metrics from each fold.</p>
+
+<p><em>Hyperparameter Selection:</em></p>
+
+<p>The difference between hyperparameter and parameter is that parameters will be learned automatically by machine. However, hyperparameter is set by human based on experience. The common approach is to define a “well-spaced grid” of hyperparameter values and select the one with the best performance.</p>
+
+<p><em>Performance Metrics:</em></p>
+
+<p>So how to measure the performance? Only using accuracy may not be a very good approach. There are better ones, like <strong>precision-recall</strong> and <strong>f1-score</strong>.</p>
+
+<p><strong>Confusion Matrix:</strong></p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-133" style="font-size: 1rem;" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.26-AM-300x141.png" alt="" width="300" height="141" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.26-AM-300x141.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.26-AM.png 573w" sizes="(max-width: 300px) 100vw, 300px" >
+    <noscript><img data-ignore  class="alignnone size-medium wp-image-133" style="font-size: 1rem;" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.26-AM-300x141.png" alt="" width="300" height="141" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.26-AM-300x141.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.26-AM.png 573w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<p>We can calculate precision-recall and f1-score as follows.</p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-132" style="font-size: 1rem;" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.38-AM-300x149.png" alt="" width="300" height="149" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.38-AM-300x149.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.38-AM.png 530w" sizes="(max-width: 300px) 100vw, 300px" >
+    <noscript><img data-ignore  class="alignnone size-medium wp-image-132" style="font-size: 1rem;" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.38-AM-300x149.png" alt="" width="300" height="149" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.38-AM-300x149.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.38-AM.png 530w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-131" style="font-size: 1rem;" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.50-AM-300x159.png" alt="" width="300" height="159" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.50-AM-300x159.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.50-AM.png 543w" sizes="(max-width: 300px) 100vw, 300px" >
+    <noscript><img data-ignore  class="alignnone size-medium wp-image-131" style="font-size: 1rem;" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.50-AM-300x159.png" alt="" width="300" height="159" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.50-AM-300x159.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-12.59.50-AM.png 543w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<p>Normally, the higher the precision, recall and f1-score are means the better performance.</p>
+
+<h2 id="regression"><span id="Regression">Regression</span></h2>
+
+<p>Before we move on from classification to regression, what is the difference between them? For classification, the output variable takes class labels. For regression, the output variable takes continuous values.</p>
+
+<p>kNN is normally used for classification. But, actually, with a regression kernel, we can change the discrete label to continuous label. For example, it’s possible to change {spam, ham} to range(1, 10).</p>
+
+<h3 id="decision-trees-for-classification"><span id="Decision_Trees_for_Classification">Decision Trees for Classification</span></h3>
+
+<p>The general approach of decision trees looks like the idea of divisive clustering but accounts for labels.</p>
+
+<p>It firstly picks a random feature and finds the threshold that makes the data as separate as possible. For each side, recurse until a termination condition is reached. The data will look like separated in many leaf cells.</p>
+
+<p>The prediction of a test point can be determined by majority vote of training point in the same leaf cell.</p>
+
+<h3 id="decision-trees-for-regression"><span id="Decision_Trees_for_Regression">Decision Trees for Regression</span></h3>
+
+<p>It’s very easy for decision trees to move from classification to regression. Except for, in the prediction part, it will predict by average in the same leaf cell.</p>
+
+<p>To choose what kind of decision trees to use, we can refer to this picture.</p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone wp-image-134" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-1.53.45-AM-300x249.png" alt="" width="328" height="272" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-1.53.45-AM-300x249.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-1.53.45-AM.png 531w" sizes="(max-width: 328px) 100vw, 328px" >
+    <noscript><img data-ignore  class="alignnone wp-image-134" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-1.53.45-AM-300x249.png" alt="" width="328" height="272" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-1.53.45-AM-300x249.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-06-at-1.53.45-AM.png 531w" sizes="(max-width: 328px) 100vw, 328px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<h3 id="random-forest-and-extremely-randomized-trees"><span id="Random_Forest_and_Extremely_Randomized_Trees">Random Forest and Extremely Randomized Trees</span></h3>
+
+<p>Typically, a decision tree is learned randomly. Therefore, by re-running the same learning procedure, we can get different decision trees and different predictions.</p>
+
+<p>Then we can aggregate the prediction results from different trees. The performance will be better if we add randomness.</p>
+
+<p>Random Forest:</p>
+
+<p>In addition to randomly choosing features to threshold, it also randomizes training data used for each tree.</p>
+
+<p>Extremely randomized trees:</p>
+
+<p>It further randomizes thresholds rather than trying to pick clever thresholds.</p>
+
+<h3 id="boosting"><span id="Boosting">Boosting</span></h3>
+
+<p>The basic idea of boosting is leaning trees sequentially and learning from previous trees’ mistakes. It will weight trees unequally, so bad trees are down-weighted.</p>
+
+<p>There’re different boosting methods. Some popular ones are <strong>AdaBoost</strong> and <strong>gradient tree boosting</strong>.</p>
+
+<h2 id="deep-learning"><span id="Deep_Learning">Deep Learning</span></h2>
+
+<p>Big data, better hardware and better algorithms are the three pillars of deep learning. With the improvement of those technologies, deep learning grows fast. People are talking more and more about deep learning.</p>
+
+<p>But, how deep learning works? Given an image of a cat, it will extract different features like edges, texture, colors. And then it will assemble them to segment and part. Then finally,  it will learn it as a cat.</p>
+
+<p>For different kind of data, we should choose different neural network architectures. Like for <strong>image analysis</strong>, <strong>Convolutional Neural Network(CNN)</strong> works well. And for <strong>time series analysis</strong>, <strong>Recurrent Neural Network(RNN)</strong> has good performence.</p>
+
+<h3 id="handwritten-digit-demo"><span id="Handwritten_Digit_Demo">Handwritten Digit Demo</span></h3>
+
+<p>This demo is pretty much used everywhere. It’s kind of deep learning’s hello world. In this part, I would like to explain in the code.</p>
+
+<pre class="brush: python; title: ; notranslate" title="">%matplotlib inline
+import matplotlib.pyplot as plt
+import numpy as np
+
+from keras.datasets import mnist
+from keras import models
+from keras import layers
+
+# loading data
+(train_images, train_labels), (test_images, test_labels) = mnist.load_data()
+# train_images.shape -&amp;gt; (60000, 28, 28)
+# test_images.shape -&amp;gt; (10000, 28, 28)
+# train_labels.shape -&amp;gt; (60000,)
+# test_labels.shape -&amp;gt; (10000,)
+
+# flatten 28 * 28 data to 784 * 1 data
+# it will be easier for neural network to learn the parameters
+# input shape will be (784,) and it's also called 784 input neurons
+flattened_train_images = train_images.reshape(len(train_images), -1) # flattens out each training image
+flattened_test_images = test_images.reshape(len(test_images), -1) # flattens out each test image
+# train_images.shape -&amp;gt; (60000, 784)
+# test_images.shape -&amp;gt; (10000, 784)
+
+flattened_train_images = flattened_train_images.astype(np.float32) / 255 # rescale to be between 0 and 1
+flattened_test_images = flattened_test_images.astype(np.float32) / 255 # rescale to be between 0 and 1
+# to_categorical is basically change the label to higher dimension
+# in this case, there're 10 labels(0-9)
+# so, this method will change them to 10 dimension and there will be only 0 and 1
+from keras.utils import to_categorical
+train_labels_categorical = to_categorical(train_labels)
+test_labels_categorical = to_categorical(test_labels)
+# for example:
+# train_labels[6] -&amp;gt; 5
+# train_labels_categorical -&amp;gt; array([ 0., 0., 0., 0., 0., 1., 0., 0., 0., 0.])
+
+# two-layer model
+two_layer_model = models.Sequential() # this is Keras's way of specifying a model that is a single sequence of layers
+# only specify input_shape in the first layer
+# following layers will figure it out automatically
+# passing data to dense layer is basically compress the data
+# each neuron in dense layer has different calculating ways
+# this process will parameterized the input data to a weighted matrix(W) and bias(b)
+# activation is kind of post-process for the learned parameters
+two_layer_model.add(layers.Dense(512, activation='relu', input_shape=(784,)))
+# total learned parameters number in first layer will be 784 * 512(W) + 512(b) = 401920
+two_layer_model.add(layers.Dense(10, activation='softmax'))
+# total learned parameters number in second layer will be 512 * 10(W) + 10(b) = 5130
+# then we will need to choose the optimizer, loss function and metrics
+two_layer_model.compile(optimizer='rmsprop',
+loss='categorical_crossentropy',
+metrics=['accuracy'])
+two_layer_model.summary() # display the summary of the neural network
+
+# epochs is how many times we train the model or the model learn the parameters
+# batch_size is kind of buffer, a batch of data to put into training or learning
+two_layer_model.fit(flattened_train_images, train_labels_categorical, epochs=5, batch_size=128)
+
+# evaluation and print out accuracy
+test_loss, test_acc = two_layer_model.evaluate(flattened_test_images, test_labels_categorical)
+print('Test accuracy:', test_acc)
+
+</pre>
+
+<h3 id="convolutional-neural-network-cnn"><span id="Convolutional_Neural_Network_CNN">Convolutional Neural Network (CNN)</span></h3>
+
+<p>The basic idea of CNN is quite straight-forward. It’s baiscally using a <strong>filter</strong>(or <strong>kernel</strong>) to scan the image, from left to right, top to down. It will calculate the dot product and finally output a smaller image.</p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-150" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.05-PM-300x183.png" alt="" width="300" height="183" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.05-PM-300x183.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.05-PM.png 514w" sizes="(max-width: 300px) 100vw, 300px" >
+    <noscript><img data-ignore  class="alignnone size-medium wp-image-150" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.05-PM-300x183.png" alt="" width="300" height="183" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.05-PM-300x183.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.05-PM.png 514w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<p>Different kernels may have different values, which gives them different functions. For example, it can be used for blurring an image or finding horizontal edges. And the kernels are actually unknown and are learned.</p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-149" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.36-PM-300x187.png" alt="" width="300" height="187" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.36-PM-300x187.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.36-PM.png 527w" sizes="(max-width: 300px) 100vw, 300px" >
+    <noscript><img data-ignore  class="alignnone size-medium wp-image-149" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.36-PM-300x187.png" alt="" width="300" height="187" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.36-PM-300x187.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-09-at-6.32.36-PM.png 527w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<p>Input image’s dimensions include height, width and depth(number of channels, e.g. RGB can be viewed as 3 channels). And after the conv2d layer, which has k kernels of 3x3xd, the output will be a stack of images, also known as feature maps. Output dimensions include height, width and k. And the k will be the next layer’s channel or depth.</p>
+
+<p>Then, normally, there will be a pooling process to aggregate local information and produce a smaller image. <strong>Max pooling</strong> is one popular pooling method. It’s simply select the maximum value.</p>
+
+<p>conv2d plus max pooling equals the basic building block of CNN. We can add many this kind of blocks. From the first block to the last block, it extracts from low-level to high-level visual features and aggregate. Finally, there may be a dense, ReLU and a dense, softmax, which are non-vision-specific classification neural net and loss function calculation.</p>
+
+<h3 id="recurrent-neural-network-rnn"><span id="Recurrent_Neural_Network_RNN">Recurrent Neural Network (RNN)</span></h3>
+
+<p>RNN’s basic idea is feeding output at previous time step as input to RNN layer at current time step. Given this idea, it performs well in handling timer series problems.</p>
+
+<p>Two common RNN layers in keras are <strong>SimpleRNN</strong> and <strong>LSTM</strong>. The difference between these two is that LSTM has a longer memory.</p>
+
+<p><em>A standard RNN:</em></p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-152" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.31-AM-300x107.png" alt="" width="300" height="107" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.31-AM-300x107.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.31-AM-768x274.png 768w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.31-AM.png 795w" sizes="(max-width: 300px) 100vw, 300px" >
+    <noscript><img data-ignore  class="alignnone size-medium wp-image-152" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.31-AM-300x107.png" alt="" width="300" height="107" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.31-AM-300x107.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.31-AM-768x274.png 768w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.31-AM.png 795w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<p><em>LSTM:</em></p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone wp-image-151" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.42-AM-300x98.png" alt="" width="312" height="102" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.42-AM-300x98.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.42-AM-768x251.png 768w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.42-AM.png 861w" sizes="(max-width: 312px) 100vw, 312px" >
+    <noscript><img data-ignore  class="alignnone wp-image-151" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.42-AM-300x98.png" alt="" width="312" height="102" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.42-AM-300x98.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.42-AM-768x251.png 768w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-12.25.42-AM.png 861w" sizes="(max-width: 312px) 100vw, 312px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<p>RNN is likely to play with other neural networks. For example, dealing with video, it will put a CNN before RNN naturally and add a dense layer as classifier at the end. For text sentiment analysis, we should put an <strong>embedding layer</strong> (common approaches for this include word2vec and GloVe) before RNN, which will turn words into vector representations that are semantically meaningful, followed by a dense layer as classifier as well.</p>
+
+<p>By the way, for classification with more than 2 classes, it’s better to use a dense layer with multiple neurons and softmax activation. For classification of 2 classes, it’s better to use a dense layer with one neuron and sigmoid activation.</p>
+
+<h3 id="gradient-descent"><span id="Gradient_Descent">Gradient Descent</span></h3>
+
+<p>Gradient descent is about finding the parameters W, which lead to minium loss. In practice, deep nets have more millions of parameters. So, it’s very high-dimensional gradient descent. Here’re two simple examples(1D and 2D) to give you an intuition.</p>
+
+<p><em>1D:</em></p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-155" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.32-AM-300x189.png" alt="" width="300" height="189" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.32-AM-300x189.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.32-AM.png 589w" sizes="(max-width: 300px) 100vw, 300px" >
+    <noscript><img data-ignore  class="alignnone size-medium wp-image-155" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.32-AM-300x189.png" alt="" width="300" height="189" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.32-AM-300x189.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.32-AM.png 589w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<p><em>2D:</em></p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-154" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.44-AM-300x199.png" alt="" width="300" height="199" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.44-AM-300x199.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.44-AM.png 513w" sizes="(max-width: 300px) 100vw, 300px" >
+    <noscript><img data-ignore  class="alignnone size-medium wp-image-154" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.44-AM-300x199.png" alt="" width="300" height="199" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.44-AM-300x199.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.20.44-AM.png 513w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<h3 id="dealing-with-small-datasets"><span id="Dealing_with_Small_Datasets">Dealing with Small Datasets</span></h3>
+
+<ul>
+  <li>Data Augmentation</li>
+</ul>
+
+<p>This idea is similar to cross validation but not exactly the same. It maximums the use of datasets. For example, it can be using mirrored versions of images, rotated versions etc. to get larger datasets.</p>
+
+<ul>
+  <li>Fine Tune</li>
+</ul>
+
+<p>This one basically means using existing pre-trained neural net. When it’s very hard to train the data, using the existing ones will be a good idea.</p>
+
+<p>In the end, it’s been a very great course! It covered from the very basic concepts to some higher level approaches, combining theory as well as practice. I would like to use this picture to sum up.</p>
+
+<p>
+  <hy-img root-margin="512px"  class="alignnone size-medium wp-image-156" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.46.24-AM-300x195.png" alt="" width="300" height="195" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.46.24-AM-300x195.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.46.24-AM.png 560w" sizes="(max-width: 300px) 100vw, 300px" >
+    <noscript><img data-ignore  class="alignnone size-medium wp-image-156" src="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.46.24-AM-300x195.png" alt="" width="300" height="195" srcset="/wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.46.24-AM-300x195.png 300w, /wp-content/uploads/2017/12/Screen-Shot-2017-12-10-at-1.46.24-AM.png 560w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img></p>
+
+<p>Thanks, George! Ciao!</p>
+
+  
+</article>
+
+
+<hr class="dingbat related" />
+
+
+
+
+  
+     
+
+
+  <aside class="about related mt4 mb4" role="complementary">
+    
+    
+
+<div class="author mt4">
+  
+
+  
+    
+
+
+  <hy-img
+    
+    src="https://media.licdn.com/dms/image/C5603AQHfqlTZH-i15Q/profile-displayphoto-shrink_200_200/0?e=1560988800&v=beta&t=M7XXdVNhHWQC4NvCNtjLGePdyzGfxtqwmJfn4cP8y0I"
+    class="avatar"
+    alt="Lucas Liu"
+    srcset="https://media.licdn.com/dms/image/C5603AQHfqlTZH-i15Q/profile-displayphoto-shrink_200_200/0?e=1560988800&v=beta&t=M7XXdVNhHWQC4NvCNtjLGePdyzGfxtqwmJfn4cP8y0I 1x,https://media.licdn.com/dms/image/C5603AQHfqlTZH-i15Q/profile-displayphoto-shrink_200_200/0?e=1560988800&v=beta&t=M7XXdVNhHWQC4NvCNtjLGePdyzGfxtqwmJfn4cP8y0I 2x"
+    
+  
+    
+    root-margin="512px"
+  >
+    <noscript><img data-ignore 
+    src="https://media.licdn.com/dms/image/C5603AQHfqlTZH-i15Q/profile-displayphoto-shrink_200_200/0?e=1560988800&v=beta&t=M7XXdVNhHWQC4NvCNtjLGePdyzGfxtqwmJfn4cP8y0I"
+    class="avatar"
+    alt="Lucas Liu"
+    srcset="https://media.licdn.com/dms/image/C5603AQHfqlTZH-i15Q/profile-displayphoto-shrink_200_200/0?e=1560988800&v=beta&t=M7XXdVNhHWQC4NvCNtjLGePdyzGfxtqwmJfn4cP8y0I 1x,https://media.licdn.com/dms/image/C5603AQHfqlTZH-i15Q/profile-displayphoto-shrink_200_200/0?e=1560988800&v=beta&t=M7XXdVNhHWQC4NvCNtjLGePdyzGfxtqwmJfn4cP8y0I 2x"
+    
+  /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img>
+
+
+  
+
+  
+  
+  <h2  class="page-title hr">
+    About
+  </h2>
+
+  <p>I’m a CMU graduate student.</p>
+
+<p>Passionate about technology! 🤖</p>
+
+<p>Love scuba diving and skateboarding! 🐙</p>
+
+<p>Addicted to the world! 🇨🇳 -&gt; 🇹🇭 -&gt; 🇰🇷 -&gt; 🇯🇵 -&gt; 🇦🇺 -&gt; 🇺🇸</p>
+
+<p>Footprints:</p>
+
+<p>{% google_map
+   src=”_data/my_places.yml” no_cluster %}</p>
+
+
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/Lucas12138" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:lucasliu12138@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://facebook.com/Lucas12138" title="Facebook" class="no-mark-external">
+      <span class="icon-facebook"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://www.linkedin.com/in/lucas-zizhe-liu-034b34103" title="LinkedIn" class="no-mark-external">
+      <span class="icon-linkedin2"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+
+  </aside>
+
+
+  
+
+  
+  
+
+  
+    
+
+
+
+
+<aside class="related mb4" role="complementary">
+  <h2 class="hr">Related Posts</h2>
+
+  <ul class="related-posts">
+    
+      
+
+
+<li>
+  <a href="/2019/04/17/wordpress-to-jekyll-migration/" class="h4 flip-title">
+    <span>Blog Migration - From Wordpress To Jekyll</span>
+  </a>
+  <time class="heading faded fine" datetime="2019-04-17T17:47:51-04:00">17 Apr 2019</time>
+</li>
+
+    
+      
+
+
+<li>
+  <a href="/2019/03/02/some-notes-on-spark-data-engineering-on-the-cloud/" class="h4 flip-title">
+    <span>Some Notes on Spark &#8211; Data Engineering on the Cloud</span>
+  </a>
+  <time class="heading faded fine" datetime="2019-03-02T16:47:51-05:00">02 Mar 2019</time>
+</li>
+
+    
+      
+
+
+<li>
+  <a href="/2018/11/05/17-682-java-ee-web-application/" class="h4 flip-title">
+    <span>17-682 Java EE Web Application</span>
+  </a>
+  <time class="heading faded fine" datetime="2018-11-04T20:36:35-05:00">04 Nov 2018</time>
+</li>
+
+    
+  </ul>
+</aside>
+
+  
+
+  
+  
+
+
+  
+
+  
+<footer role="contentinfo">
+  <hr/>
+  
+    <p><small class="copyright">© 2019. All rights reserved.
+</small></p>
+  
+  
+  <p><small>Powered by <a class="external" href="https://hydejack.com/">Hydejack</a> v<span id="_version">8.4.0</span></small></p>
+  <hr class="sr-only"/>
+</footer>
+
+
+</main>
+
+    <hy-drawer
+  class=""
+  align="left"
+  threshold="10"
+  touch-events
+  prevent-default
+>
+  <header id="_sidebar" class="sidebar" role="banner">
+    
+    <div class="sidebar-bg sidebar-overlay" style="background-color:rgb(25,55,71);background-image:url(/assets/img/sidebar-bg.jpg)"></div>
+
+    <div class="sidebar-sticky">
+      <div class="sidebar-about">
+        
+          <a class="no-hover" href="/" tabindex="-1">
+            <img src="/assets/icons/nefertiti.png" class="avatar" alt="LUCAS LIU" data-ignore />
+          </a>
+        
+        <h2 class="h1"><a href="/">LUCAS LIU</a></h2>
+        
+        
+          <p class="">
+            My heart is in the work. 💻
+
+          </p>
+        
+      </div>
+
+      <nav class="sidebar-nav heading" role="navigation">
+        <span class="sr-only">Navigation:</span>
+<ul>
+  
+    
+      
+      <li>
+        <a
+          id="_navigation"
+          href="/hydejack/"
+          class="sidebar-nav-item"
+          
+        >
+          Blog
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/categories/"
+          class="sidebar-nav-item"
+          
+        >
+          Categories
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/about/"
+          class="sidebar-nav-item"
+          
+        >
+          About
+        </a>
+      </li>
+    
+  
+</ul>
+
+      </nav>
+
+      
+
+      <div class="sidebar-social">
+        <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/Lucas12138" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:lucasliu12138@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://facebook.com/Lucas12138" title="Facebook" class="no-mark-external">
+      <span class="icon-facebook"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://www.linkedin.com/in/lucas-zizhe-liu-034b34103" title="LinkedIn" class="no-mark-external">
+      <span class="icon-linkedin2"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+      </div>
+    </div>
+  </header>
+</hy-drawer>
+<hr class="sr-only" hidden />
+
+  
+</hy-push-state>
+
+
+  <!--[if !IE]><!---->
+  <script>loadJSDeferred(document.getElementById('_hrefJS').href);</script>
+  
+
+  <!--<![endif]-->
+
+  
+
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      
+        navigator.serviceWorker.getRegistration()
+          .then(r => r.unregister())
+          .catch(() => {});
+      
+    }
+  </script>
+
+
+
+
+
+
+<h2 class="sr-only" hidden>Templates (for web app):</h2>
+
+<template id="_animation-template" hidden>
+  <div class="animation-main fixed-top">
+    <div class="content">
+      <div class="page"></div>
+    </div>
+  </div>
+</template>
+
+<template id="_loading-template" hidden>
+  <div class="loading nav-btn fr">
+    <span class="sr-only">Loading…</span>
+    <span class="icon-cog"></span>
+  </div>
+</template>
+
+<template id="_error-template" hidden>
+  <div class="page">
+    <h1 class="page-title">Error</h1>
+    
+    
+    <p class="lead">
+      Sorry, an error occurred while loading <a class="this-link" href=""></a>.
+
+    </p>
+  </div>
+</template>
+
+<template id="_back-template" hidden>
+  <a id="_back" class="back nav-btn fl no-hover">
+    <span class="sr-only">Back</span>
+    <span class="icon-arrow-left2"></span>
+  </a>
+</template>
+
+<template id="_permalink-template" hidden>
+  <a href="#" class="permalink">
+    <span class="sr-only">Permalink</span>
+    <span class="icon-link"></span>
+  </a>
+</template>
+
+
+
+
+</body>
+</html>
