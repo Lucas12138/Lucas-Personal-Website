@@ -15,7 +15,5 @@ Love scuba diving and skateboarding! 🐙
 
 Addicted to the world! 🇨🇳 -> 🇹🇭 -> 🇰🇷 -> 🇯🇵 -> 🇦🇺 -> 🇺🇸
 
-Footprints:
-
 {% google_map 
    src="_data/my_places.yml" no_cluster %}

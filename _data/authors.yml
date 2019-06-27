@@ -16,8 +16,6 @@ author1:
 
     Addicted to the world! 🇨🇳 -> 🇹🇭 -> 🇰🇷 -> 🇯🇵 -> 🇦🇺 -> 🇺🇸
 
-    Footprints:
-
     {% google_map
        src="_data/my_places.yml" no_cluster %}
 

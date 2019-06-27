@@ -237,9 +237,255 @@
 ####### 01 END #######
 
 
+####### 02 START #######
+- title: "Phuket"
+  data_set: "02"
+  location:
+    latitude: 7.888599
+    longitude: 98.304344
 
+- title: "Krabi"
+  data_set: "02"
+  location:
+    latitude: 7.977795
+    longitude: 98.961742
+####### 02 END #######
 
+####### 03 START #######
+- title: "Seoul"
+  data_set: "03"
+  location:
+    latitude: 37.552984
+    longitude: 126.984036
+####### 03 END #######
 
+####### 04 START #######
+- title: "Osaka"
+  data_set: "04"
+  location:
+    latitude: 34.656378
+    longitude: 135.491847
+
+- title: "Kyoto"
+  data_set: "04"
+  location:
+    latitude: 35.007010
+    longitude: 135.766545
+
+- title: "Nara"
+  data_set: "04"
+  location:
+    latitude: 34.686640
+    longitude: 135.805562
+
+- title: "Mount Fuji"
+  data_set: "04"
+  location:
+    latitude: 35.362747
+    longitude: 138.730849
+
+- title: "Hakone"
+  data_set: "04"
+  location:
+    latitude: 35.232642
+    longitude: 139.030788
+
+- title: "Yokohama"
+  data_set: "04"
+  location:
+    latitude: 35.454611
+    longitude: 139.635834
+
+- title: "Tokyo"
+  data_set: "04"
+  location:
+    latitude: 35.687038
+    longitude: 139.749830
+
+- title: "Tateyama"
+  data_set: "04"
+  location:
+    latitude: 34.992554
+    longitude: 139.860029
+####### 04 END #######
+
+####### 05 START #######
+- title: "Adelaide"
+  data_set: "05"
+  location:
+    latitude: -34.911347
+    longitude: 138.560088
+
+- title: "Melbourne"
+  data_set: "05"
+  location:
+    latitude: -37.828019
+    longitude: 144.949440
+
+- title: "Sydney"
+  data_set: "05"
+  location:
+    latitude: -33.862896
+    longitude: 151.209320
+
+- title: "Gold Coast"
+  data_set: "05"
+  location:
+    latitude: -28.012918
+    longitude: 153.417313
+####### 05 END #######
+
+####### 06 START #######
+- title: "Pittsburgh"
+  data_set: "06"
+  location:
+    latitude: 40.442533
+    longitude: -80.000628
+
+- title: "Miami"
+  data_set: "06"
+  location:
+    latitude: 25.766743
+    longitude: -80.191119
+
+- title: "Key West"
+  data_set: "06"
+  location:
+    latitude: 24.554958
+    longitude: -81.787066
+
+- title: "Myrtle Beach"
+  data_set: "06"
+  location:
+    latitude: 33.693720
+    longitude: -78.881575
+
+- title: "Denver"
+  data_set: "06"
+  location:
+    latitude: 39.732055
+    longitude: -104.971862
+
+- title: "Golden"
+  data_set: "06"
+  location:
+    latitude: 39.753146
+    longitude: -105.221048
+
+- title: "Rocky Mountain National Park"
+  data_set: "06"
+  location:
+    latitude: 40.342359
+    longitude: -105.680155
+
+- title: "Great Sand Dunes National Park"
+  data_set: "06"
+  location:
+    latitude: 37.790778
+    longitude: -105.592918
+
+- title: "Garden of the Gods"
+  data_set: "06"
+  location:
+    latitude: 38.878404
+    longitude: -104.869852
+
+- title: "Arches National Park"
+  data_set: "06"
+  location:
+    latitude: 38.732740
+    longitude: -109.587014
+
+- title: "Zion National Park"
+  data_set: "06"
+  location:
+    latitude: 37.298966
+    longitude: -113.024055
+
+- title: "Las Vegas"
+  data_set: "06"
+  location:
+    latitude: 36.170890
+    longitude: -115.142794
+
+- title: "Hoover Dam"
+  data_set: "06"
+  location:
+    latitude: 36.015987
+    longitude: -114.737679
+
+- title: "Los Angeles"
+  data_set: "06"
+  location:
+    latitude: 34.057798
+    longitude: -118.263036
+
+- title: "Santa Barbara"
+  data_set: "06"
+  location:
+    latitude: 34.415214
+    longitude: -119.690423
+
+- title: "Santa Maria"
+  data_set: "06"
+  location:
+    latitude: 34.948880
+    longitude: -120.436159
+
+- title: "McWay Falls"
+  data_set: "06"
+  location:
+    latitude: 36.158914
+    longitude: -121.672178
+
+- title: "Monterey"
+  data_set: "06"
+  location:
+    latitude: 36.601113
+    longitude: -121.889302
+
+- title: "Santa Cruz"
+  data_set: "06"
+  location:
+    latitude: 36.959287
+    longitude: -122.018412
+
+- title: "San Jose"
+  data_set: "06"
+  location:
+    latitude: 37.330778
+    longitude: -121.886054
+
+- title: "San Francisco"
+  data_set: "06"
+  location:
+    latitude: 37.777153
+    longitude: -122.413163
+
+- title: "Redding"
+  data_set: "06"
+  location:
+    latitude: 40.581909
+    longitude: -122.354778
+
+- title: "Portland"
+  data_set: "06"
+  location:
+    latitude: 45.518454
+    longitude: -122.678338
+
+- title: "Seattle"
+  data_set: "06"
+  location:
+    latitude: 47.602196
+    longitude: -122.331109
+
+- title: "Bellevue"
+  data_set: "06"
+  location:
+    latitude: 47.611665
+    longitude: -122.200914
+####### 06 END #######
 
 
 
