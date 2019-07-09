@@ -485,6 +485,25 @@
   location:
     latitude: 47.611665
     longitude: -122.200914
+
+- title: "Cleveland"
+  data_set: "06"
+  location:
+    latitude: 41.498375
+    longitude: -81.693497
+
+- title: "Kalahari Resorts Sandusky"
+  data_set: "06"
+  location:
+    latitude: 41.383804
+    longitude: -82.641620
+
+- title: "Ohiopyle (cucumber falls, rafting)"
+  data_set: "06"
+  location:
+    latitude: 39.868924
+    longitude: -79.493060
+
 ####### 06 END #######
 
 
