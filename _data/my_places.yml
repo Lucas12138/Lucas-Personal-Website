@@ -504,6 +504,48 @@
     latitude: 39.868924
     longitude: -79.493060
 
+- title: "Allegheny National Forest (PAFF)"
+  data_set: "06"
+  location:
+    latitude: 41.649159
+    longitude: -79.009197
+
+- title: "Allegheny National Forest (PAFF)"
+  data_set: "06"
+  location:
+    latitude: 41.649159
+    longitude: -79.009197
+
+- title: "Penn's Cave"
+  data_set: "06"
+  location:
+    latitude: 40.883079
+    longitude: -77.611614
+
+- title: "Washington, DC"
+  data_set: "06"
+  location:
+    latitude: 38.899865
+    longitude: -77.035169
+
+- title: "Baltimore"
+  data_set: "06"
+  location:
+    latitude: 39.286327
+    longitude: -76.612430
+
+- title: "Philadelphia"
+  data_set: "06"
+  location:
+    latitude: 39.950471
+    longitude: -75.147255
+
+- title: "New York"
+  data_set: "06"
+  location:
+    latitude: 40.754502
+    longitude: -73.975409
+
 ####### 06 END #######
 
 
