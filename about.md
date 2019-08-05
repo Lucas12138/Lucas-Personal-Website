@@ -7,7 +7,7 @@ layout: page
 guid: http://18.216.154.163/?page_id=26
 image: /wp-content/uploads/2017/11/yellow_color_burst-wallpaper-1440x900.jpg
 ---
-I&#8217;m a CMU graduate student.
+I&#8217;m a software engineer at Amazon, graduated from CMU.
 
 Passionate about technology! 🤖
 
