@@ -78,3 +78,16 @@ categories:
   <img class="alignnone size-medium wp-image-197" src="{{site.baseurl}}/wp-content/uploads/2017/08/japan-diving2-300x169.jpg" alt="" width="300" height="169" />
   <img class="alignnone size-medium wp-image-198" src="{{site.baseurl}}/wp-content/uploads/2017/08/japan-diving1-300x169.jpg" alt="" width="300" height="169" />
 </div>
+
+<div>
+  <strong>Hawaii, United States: 3 dives</strong>
+</div>
+
+<div>
+  <em>     Sea Tiger, Nautilus Reef</em>
+</div>
+
+<div>
+  <img class="alignnone size-medium wp-image-197" src="{{site.baseurl}}/wp-content/uploads/2017/08/night-dive-sea-tiger.jpg" alt="" width="300" height="191" />
+  <img class="alignnone size-medium wp-image-198" src="{{site.baseurl}}/wp-content/uploads/2017/08/reef-dive.jpg" alt="" width="300" height="223" />
+</div>
