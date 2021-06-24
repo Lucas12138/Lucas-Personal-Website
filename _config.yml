@@ -343,3 +343,4 @@ sass:
 maps:
   google:
     api_key: AIzaSyCyN6C7EMhC6NCu-vY-Dz3F0AgejKf0qxI
+theme: jekyll-theme-minimal
